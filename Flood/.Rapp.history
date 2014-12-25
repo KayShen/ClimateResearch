@@ -1,0 +1,2672 @@
+seq(1,5)*length(valid)/5
+start <- round(seq(0,4)*length(valid)/5)+1#
+    end <- round(seq(1,5)*length(valid)/5)
+end
+start
+error <- rep(Inf,5)#
+        for (j in 1:5){#
+            y_bar = classify(x_train[sort(valid[start[j]:end[j]]),],pars)#
+            error[j] = sum(y_bar!=y[sort(valid[start[j]:end[j]]),])/(length(valid)/5)#
+        }
+error
+weight <- rep(0.005,200)#
+    n_row = nrow(x)#
+    n_test = round(n_row*0.2)#
+    test = sort(sample(1:n_row,n_test))#
+    x_test = x[test,]#
+    x_train = x[-test,]#
+    y_test = y[test,]#
+    x_train = y[-test,]#
+    valid = sample(1:nrow(x_train))#
+    start <- round(seq(0,4)*length(valid)/5)+1#
+    end <- round(seq(1,5)*length(valid)/5)
+x
+nrow(x)
+weight <- rep(0.005,200)#
+    n_row = nrow(x)#
+    n_test = round(n_row*0.2)#
+    test = sort(sample(1:n_row,n_test))#
+    x_test = x[test,]#
+    x_train = x[-test,]#
+    y_test = y[test,]#
+    x_train = y[-test,]#
+    valid = sample(1:nrow(x_train))#
+    start <- round(seq(0,4)*length(valid)/5)+1#
+    end <- round(seq(1,5)*length(valid)/5)
+nrow(x_train)
+x_train
+weight <- rep(0.005,200)#
+    n_row = nrow(x)#
+    n_test = round(n_row*0.2)#
+    test = sort(sample(1:n_row,n_test))#
+    x_test = x[test,]#
+    x_train = x[-test,]#
+    y_test = y[test,]#
+    y_train = y[-test,]#
+    valid = sample(1:nrow(x_train))#
+    start <- round(seq(0,4)*length(valid)/5)+1#
+    end <- round(seq(1,5)*length(valid)/5)
+y_train
+dim(y_train)
+y_train[1,1]
+y_train[1]
+weight <- rep(0.005,200)#
+    n_row = nrow(x)#
+    n_test = round(n_row*0.2)#
+    test = sort(sample(1:n_row,n_test))#
+    x_test = x[test,]#
+    x_train = x[-test,]#
+    y_test = y[test,]#
+    y_train = y[-test,]#
+    valid = sample(1:nrow(x_train))#
+    start <- round(seq(0,4)*length(valid)/5)+1#
+    end <- round(seq(1,5)*length(valid)/5)
+start
+end
+for (b in 1:5){#
+        pars <- train(x,y,weight)#
+        error <- rep(Inf,5)#
+        for (j in 1:5){#
+            y_bar = classify(x_train[sort(valid[start[j]:end[j]]),],pars)#
+            error[j] = sum(y_bar!=y_train[sort(valid[start[j]:end[j]])])/(length(valid)/5)#
+        }
+error <- rep(Inf,5)#
+        for (j in 1:5){#
+            y_bar = classify(x_train[sort(valid[start[j]:end[j]]),],pars)#
+            error[j] = sum(y_bar!=y_train[sort(valid[start[j]:end[j]])])/(length(valid)/5)#
+        }
+error
+y_bar
+j = 5
+y_train[sort(valid[start[j]:end[j]])]
+y_bar != y_train
+y_train[sort(valid[start[j]:end[j]])] != y_train
+y_train[sort(valid[start[j]:end[j]])] != y_bar
+y_train[sort(valid[start[j]:end[j]])] == y_bar
+weight
+weight_train = weight(-test)
+weight_train = weight[-test]
+length(weight)
+length(weight_train)
+j = 1
+y_bar = classify(x_train[sort(valid[start[j]:end[j]]),],pars)#
+            error[j] = sum(y_bar!=y_train[sort(valid[start[j]:end[j]])])/(length(valid)/5)#
+            com_error[j] = sum(weight_train[sort(valid[start[j]:end[j]])][y_train[sort(valid[start[j]:end[j]])] != y_bar])/sum(weight_train[sort(valid[start[j]:end[j]])])
+comp_error <- rep(Inf, 5)
+y_bar = classify(x_train[sort(valid[start[j]:end[j]]),],pars)#
+            error[j] = sum(y_bar!=y_train[sort(valid[start[j]:end[j]])])/(length(valid)/5)#
+            com_error[j] = sum(weight_train[sort(valid[start[j]:end[j]])][y_train[sort(valid[start[j]:end[j]])] != y_bar])/sum(weight_train[sort(valid[start[j]:end[j]])])
+y_bar = classify(x_train[sort(valid[start[j]:end[j]]),],pars)#
+            error[j] = sum(y_bar!=y_train[sort(valid[start[j]:end[j]])])/(length(valid)/5)#
+            comp_error[j] = sum(weight_train[sort(valid[start[j]:end[j]])][y_train[sort(valid[start[j]:end[j]])] != y_bar])/sum(weight_train[sort(valid[start[j]:end[j]])])
+error
+comp_error
+y_bar = classify(x_train[sort(valid[start[j]:end[j]]),],pars)#
+            error[j] = sum(y_bar!=y_train[sort(valid[start[j]:end[j]])])/(length(valid)/5)#
+            comp_error[j] = sum(weight_train[sort(valid[start[j]:end[j]])][y_train[sort(valid[start[j]:end[j]])] != y_bar])
+error
+comp_error
+0.01/0.06525
+for (b in 1:k){#
+        pars <- train(x,y,weight)#
+        error <- rep(Inf,5)#
+        comp_error <- rep(Inf, 5)#
+        for (j in 1:5){#
+            y_bar = classify(x_train[sort(valid[start[j]:end[j]]),],pars)#
+            error[j] = sum(y_bar!=y_train[sort(valid[start[j]:end[j]])])/(length(valid)/5)#
+            comp_error[j] = sum(weight_train[sort(valid[start[j]:end[j]])][y_train[sort(valid[start[j]:end[j]])] != y_bar])#
+#
+        }#
+        train_error_rate[b] = sum(error)/5#
+        train_comp_error = sum(comp_error)
+error <- rep(Inf,5)#
+        comp_error <- rep(Inf, 5)#
+        for (j in 1:5){#
+            y_bar = classify(x_train[sort(valid[start[j]:end[j]]),],pars)#
+            error[j] = sum(y_bar!=y_train[sort(valid[start[j]:end[j]])])/(length(valid)/5)#
+            comp_error[j] = sum(weight_train[sort(valid[start[j]:end[j]])][y_train[sort(valid[start[j]:end[j]])] != y_bar])#
+#
+        }#
+        train_error_rate[b] = sum(error)/5#
+        train_comp_error = sum(comp_error)
+pars <- train(x,y,weight)#
+        error <- rep(Inf,5)#
+        comp_error <- rep(Inf, 5)#
+        for (j in 1:5){#
+            y_bar = classify(x_train[sort(valid[start[j]:end[j]]),],pars)#
+            error[j] = sum(y_bar!=y_train[sort(valid[start[j]:end[j]])])/(length(valid)/5)#
+            comp_error[j] = sum(weight_train[sort(valid[start[j]:end[j]])][y_train[sort(valid[start[j]:end[j]])] != y_bar])#
+#
+        }#
+        train_error_rate = sum(error)/5#
+        train_comp_error = sum(comp_error)
+error <- rep(Inf,5)#
+        comp_error <- rep(Inf, 5)#
+        for (j in 1:5){#
+            y_bar = classify(x_train[sort(valid[start[j]:end[j]]),],pars)#
+            error[j] = sum(y_bar!=y_train[sort(valid[start[j]:end[j]])])/(length(valid)/5)#
+            comp_error[j] = sum(weight_train[sort(valid[start[j]:end[j]])][y_train[sort(valid[start[j]:end[j]])] != y_bar])#
+#
+        }#
+        train_error_rate = sum(error)/5#
+        train_comp_error = sum(comp_error)
+train_error_rate
+train_comp_error
+0.1125*0.05
+j
+sum(weight_train[sort(valid[start[j]:end[j]])][y_train[sort(valid[start[j]:end[j]])] != y_bar])
+y_train[sort(valid[start[j]:end[j]])] != y_bar
+train_comp_error = sum(comp_error)/sum(weight_train)
+train_comp_error
+train <- function(x, y, weight){#
+    n_col = ncol(x)#
+    n_row = nrow(x)#
+    theta <- Inf#
+    min <- Inf#
+    index = 1#
+    for (j in 1:n_col){#
+        x_new <- cbind(x[,j], y, weight)#
+        x_new <- x_new[order(x_new[,1]),]#
+        min_part = Inf#
+        theta_temp = x_new[1,1]#
+        m_part = 0#
+        for (k in 1:n_row-1){#
+            m_temp = 0#
+            mis_temp1 = sum(x_new[1:k,3][x_new[1:k,2]==-1]) + sum(x_new[(k+1):n_row,3][x_new[(k+1):n_row,2]==1])#
+            mis_temp2 = sum(x_new[1:k,3][x_new[1:k,2]==1]) + sum(x_new[(k+1):n_row,3][x_new[(k+1):n_row,2]==-1])#
+            if (sum(x_new[1:k,2]) <= 0){#
+                m_temp = 1#
+            }#
+            else{#
+                m_temp = -1#
+            }#
+            mis_temp = min(mis_temp1, mis_temp2)#
+            if (min_part > mis_temp){#
+                min_part = mis_temp#
+                if (k != 1){#
+                    theta_temp = x_new[k-1,1]#
+                    m_part = m_temp#
+                }#
+            }#
+#
+        }#
+        if (min > min_part){#
+            min = min_part#
+            index = j#
+            theta = theta_temp#
+            m = m_part#
+        }#
+    }#
+    print (min)#
+    return (matrix(c(index,theta,m), nrow = 1, ncol = 3))#
+}#
+#
+classify <- function(x, pars){#
+    n_row = nrow(x)#
+    index = as.integer(pars[1])#
+    theta = pars[2]#
+    m = as.integer(pars[3])#
+    y_hat = rep(m,n_row)#
+    y_hat[x[,index]<=theta] = -m#
+    return (y_hat)#
+}#
+#
+agg_class <- function(x,alpha,allPars){#
+    n_row = nrow(x)#
+    index = allPars[,1]#
+    theta = allPars[,2]#
+    m = allPars[,3]#
+    y_hat = rep(0,n_row)#
+    for (i in 1:length(index)){#
+        label = classify(x,pars)#
+        y_hat = y_hat + alpha[i]*label#
+    }#
+    y_hat = sign(y_hat)#
+    return (y_hat)#
+}#
+adaboost <- function(x,y){#
+    weight <- rep(0.005,200)#
+    n_row = nrow(x)#
+    n_test = round(n_row*0.2)#
+    test = sort(sample(1:n_row,n_test))#
+    x_test = x[test,]#
+    x_train = x[-test,]#
+    y_test = y[test,]#
+    y_train = y[-test,]#
+    weight_test = weight(test)#
+    weight_train = weight(-test)#
+    valid = sample(1:nrow(x_train))#
+    start <- round(seq(0,4)*length(valid)/5)+1#
+    end <- round(seq(1,5)*length(valid)/5)#
+    k = 5#
+    train_error_rate <- rep(Inf, k)#
+    alpha <- rep(Inf,k)#
+    for (b in 1:k){#
+        pars <- train(x,y,weight)#
+        error <- rep(Inf,5)#
+        comp_error <- rep(Inf, 5)#
+        y_train_bar = classify(x_train, pars)#
+        comp_error = sum(weight_train[y_train_bar!=y_bar])/sum(weight_train)#
+        alpha[b] = log((1-comp_error)/comp_error)#
+        weight_train[y_train_bar!=y_bar] = weight_train[y_train_bar!=y_bar]*exp(alpha[b])#
+#        for (j in 1:5){#
+#            y_bar = classify(x_train[sort(valid[start[j]:end[j]]),],pars)#
+#            error[j] = sum(y_bar!=y_train[sort(valid[start[j]:end[j]])])/(length(valid)/5)#
+#            comp_error[j] = sum(weight_train[sort(valid[start[j]:end[j]])][y_train[sort(valid[start[j]:end[j]])] != y_bar])#
+#
+#        }#
+#
+        if (b == 1){#
+            allPars = pars#
+        }#
+        else{#
+            allPars = rbind(allPars, pars)#
+        }#
+    }#
+#
+}#
+#
+# main body of AdaBoost#
+x = read.table("/Users/kshen4/Dropbox/Columbia/W4400 Statistcal Machine Learning/HW2/uspsdata/uspsdata.txt")#
+y = read.table("/Users/kshen4/Dropbox/Columbia/W4400 Statistcal Machine Learning/HW2/uspsdata/uspscl.txt")#
+adabost(x,y)
+train <- function(x, y, weight){#
+    n_col = ncol(x)#
+    n_row = nrow(x)#
+    theta <- Inf#
+    min <- Inf#
+    index = 1#
+    for (j in 1:n_col){#
+        x_new <- cbind(x[,j], y, weight)#
+        x_new <- x_new[order(x_new[,1]),]#
+        min_part = Inf#
+        theta_temp = x_new[1,1]#
+        m_part = 0#
+        for (k in 1:n_row-1){#
+            m_temp = 0#
+            mis_temp1 = sum(x_new[1:k,3][x_new[1:k,2]==-1]) + sum(x_new[(k+1):n_row,3][x_new[(k+1):n_row,2]==1])#
+            mis_temp2 = sum(x_new[1:k,3][x_new[1:k,2]==1]) + sum(x_new[(k+1):n_row,3][x_new[(k+1):n_row,2]==-1])#
+            if (sum(x_new[1:k,2]) <= 0){#
+                m_temp = 1#
+            }#
+            else{#
+                m_temp = -1#
+            }#
+            mis_temp = min(mis_temp1, mis_temp2)#
+            if (min_part > mis_temp){#
+                min_part = mis_temp#
+                if (k != 1){#
+                    theta_temp = x_new[k-1,1]#
+                    m_part = m_temp#
+                }#
+            }#
+#
+        }#
+        if (min > min_part){#
+            min = min_part#
+            index = j#
+            theta = theta_temp#
+            m = m_part#
+        }#
+    }#
+    print (min)#
+    return (matrix(c(index,theta,m), nrow = 1, ncol = 3))#
+}#
+#
+classify <- function(x, pars){#
+    n_row = nrow(x)#
+    index = as.integer(pars[1])#
+    theta = pars[2]#
+    m = as.integer(pars[3])#
+    y_hat = rep(m,n_row)#
+    y_hat[x[,index]<=theta] = -m#
+    return (y_hat)#
+}#
+#
+agg_class <- function(x,alpha,allPars){#
+    n_row = nrow(x)#
+    index = allPars[,1]#
+    theta = allPars[,2]#
+    m = allPars[,3]#
+    y_hat = rep(0,n_row)#
+    for (i in 1:length(index)){#
+        label = classify(x,pars)#
+        y_hat = y_hat + alpha[i]*label#
+    }#
+    y_hat = sign(y_hat)#
+    return (y_hat)#
+}#
+adaboost <- function(x,y){#
+    weight <- rep(0.005,200)#
+    n_row = nrow(x)#
+    n_test = round(n_row*0.2)#
+    test = sort(sample(1:n_row,n_test))#
+    x_test = x[test,]#
+    x_train = x[-test,]#
+    y_test = y[test,]#
+    y_train = y[-test,]#
+    weight_test = weight(test)#
+    weight_train = weight(-test)#
+    valid = sample(1:nrow(x_train))#
+    start <- round(seq(0,4)*length(valid)/5)+1#
+    end <- round(seq(1,5)*length(valid)/5)#
+    k = 5#
+    train_error_rate <- rep(Inf, k)#
+    alpha <- rep(Inf,k)#
+    for (b in 1:k){#
+        pars <- train(x,y,weight)#
+        error <- rep(Inf,5)#
+        comp_error <- rep(Inf, 5)#
+        y_train_bar = classify(x_train, pars)#
+        comp_error = sum(weight_train[y_train_bar!=y_bar])/sum(weight_train)#
+        alpha[b] = log((1-comp_error)/comp_error)#
+        weight_train[y_train_bar!=y_bar] = weight_train[y_train_bar!=y_bar]*exp(alpha[b])#
+#        for (j in 1:5){#
+#            y_bar = classify(x_train[sort(valid[start[j]:end[j]]),],pars)#
+#            error[j] = sum(y_bar!=y_train[sort(valid[start[j]:end[j]])])/(length(valid)/5)#
+#            comp_error[j] = sum(weight_train[sort(valid[start[j]:end[j]])][y_train[sort(valid[start[j]:end[j]])] != y_bar])#
+#
+#        }#
+#
+        if (b == 1){#
+            allPars = pars#
+        }#
+        else{#
+            allPars = rbind(allPars, pars)#
+        }#
+    }#
+#
+}#
+#
+# main body of AdaBoost#
+x = read.table("/Users/kshen4/Dropbox/Columbia/W4400 Statistcal Machine Learning/HW2/uspsdata/uspsdata.txt")#
+y = read.table("/Users/kshen4/Dropbox/Columbia/W4400 Statistcal Machine Learning/HW2/uspsdata/uspscl.txt")#
+adaboost(x,y)
+train <- function(x, y, weight){#
+    n_col = ncol(x)#
+    n_row = nrow(x)#
+    theta <- Inf#
+    min <- Inf#
+    index = 1#
+    for (j in 1:n_col){#
+        x_new <- cbind(x[,j], y, weight)#
+        x_new <- x_new[order(x_new[,1]),]#
+        min_part = Inf#
+        theta_temp = x_new[1,1]#
+        m_part = 0#
+        for (k in 1:n_row-1){#
+            m_temp = 0#
+            mis_temp1 = sum(x_new[1:k,3][x_new[1:k,2]==-1]) + sum(x_new[(k+1):n_row,3][x_new[(k+1):n_row,2]==1])#
+            mis_temp2 = sum(x_new[1:k,3][x_new[1:k,2]==1]) + sum(x_new[(k+1):n_row,3][x_new[(k+1):n_row,2]==-1])#
+            if (sum(x_new[1:k,2]) <= 0){#
+                m_temp = 1#
+            }#
+            else{#
+                m_temp = -1#
+            }#
+            mis_temp = min(mis_temp1, mis_temp2)#
+            if (min_part > mis_temp){#
+                min_part = mis_temp#
+                if (k != 1){#
+                    theta_temp = x_new[k-1,1]#
+                    m_part = m_temp#
+                }#
+            }#
+#
+        }#
+        if (min > min_part){#
+            min = min_part#
+            index = j#
+            theta = theta_temp#
+            m = m_part#
+        }#
+    }#
+    print (min)#
+    return (matrix(c(index,theta,m), nrow = 1, ncol = 3))#
+}#
+#
+classify <- function(x, pars){#
+    n_row = nrow(x)#
+    index = as.integer(pars[1])#
+    theta = pars[2]#
+    m = as.integer(pars[3])#
+    y_hat = rep(m,n_row)#
+    y_hat[x[,index]<=theta] = -m#
+    return (y_hat)#
+}#
+#
+agg_class <- function(x,alpha,allPars){#
+    n_row = nrow(x)#
+    index = allPars[,1]#
+    theta = allPars[,2]#
+    m = allPars[,3]#
+    y_hat = rep(0,n_row)#
+    for (i in 1:length(index)){#
+        label = classify(x,pars)#
+        y_hat = y_hat + alpha[i]*label#
+    }#
+    y_hat = sign(y_hat)#
+    return (y_hat)#
+}#
+adaboost <- function(x,y){#
+    weight <- rep(0.005,200)#
+    n_row = nrow(x)#
+    n_test = round(n_row*0.2)#
+    test = sort(sample(1:n_row,n_test))#
+    x_test = x[test,]#
+    x_train = x[-test,]#
+    y_test = y[test,]#
+    y_train = y[-test,]#
+    weight_test = weight[test]#
+    weight_train = weight[-test]#
+    valid = sample(1:nrow(x_train))#
+    start <- round(seq(0,4)*length(valid)/5)+1#
+    end <- round(seq(1,5)*length(valid)/5)#
+    k = 5#
+    train_error_rate <- rep(Inf, k)#
+    alpha <- rep(Inf,k)#
+    for (b in 1:k){#
+        pars <- train(x,y,weight)#
+        error <- rep(Inf,5)#
+        comp_error <- rep(Inf, 5)#
+        y_train_bar = classify(x_train, pars)#
+        comp_error = sum(weight_train[y_train_bar!=y_bar])/sum(weight_train)#
+        alpha[b] = log((1-comp_error)/comp_error)#
+        weight_train[y_train_bar!=y_bar] = weight_train[y_train_bar!=y_bar]*exp(alpha[b])#
+#        for (j in 1:5){#
+#            y_bar = classify(x_train[sort(valid[start[j]:end[j]]),],pars)#
+#            error[j] = sum(y_bar!=y_train[sort(valid[start[j]:end[j]])])/(length(valid)/5)#
+#            comp_error[j] = sum(weight_train[sort(valid[start[j]:end[j]])][y_train[sort(valid[start[j]:end[j]])] != y_bar])#
+#
+#        }#
+#
+        if (b == 1){#
+            allPars = pars#
+        }#
+        else{#
+            allPars = rbind(allPars, pars)#
+        }#
+    }#
+#
+}#
+#
+# main body of AdaBoost#
+x = read.table("/Users/kshen4/Dropbox/Columbia/W4400 Statistcal Machine Learning/HW2/uspsdata/uspsdata.txt")#
+y = read.table("/Users/kshen4/Dropbox/Columbia/W4400 Statistcal Machine Learning/HW2/uspsdata/uspscl.txt")#
+adaboost(x,y)
+train <- function(x, y, weight){#
+    n_col = ncol(x)#
+    n_row = nrow(x)#
+    theta <- Inf#
+    min <- Inf#
+    index = 1#
+    for (j in 1:n_col){#
+        x_new <- cbind(x[,j], y, weight)#
+        x_new <- x_new[order(x_new[,1]),]#
+        min_part = Inf#
+        theta_temp = x_new[1,1]#
+        m_part = 0#
+        for (k in 1:n_row-1){#
+            m_temp = 0#
+            mis_temp1 = sum(x_new[1:k,3][x_new[1:k,2]==-1]) + sum(x_new[(k+1):n_row,3][x_new[(k+1):n_row,2]==1])#
+            mis_temp2 = sum(x_new[1:k,3][x_new[1:k,2]==1]) + sum(x_new[(k+1):n_row,3][x_new[(k+1):n_row,2]==-1])#
+            if (sum(x_new[1:k,2]) <= 0){#
+                m_temp = 1#
+            }#
+            else{#
+                m_temp = -1#
+            }#
+            mis_temp = min(mis_temp1, mis_temp2)#
+            if (min_part > mis_temp){#
+                min_part = mis_temp#
+                if (k != 1){#
+                    theta_temp = x_new[k-1,1]#
+                    m_part = m_temp#
+                }#
+            }#
+#
+        }#
+        if (min > min_part){#
+            min = min_part#
+            index = j#
+            theta = theta_temp#
+            m = m_part#
+        }#
+    }#
+    print (min)#
+    return (matrix(c(index,theta,m), nrow = 1, ncol = 3))#
+}#
+#
+classify <- function(x, pars){#
+    n_row = nrow(x)#
+    index = as.integer(pars[1])#
+    theta = pars[2]#
+    m = as.integer(pars[3])#
+    y_hat = rep(m,n_row)#
+    y_hat[x[,index]<=theta] = -m#
+    return (y_hat)#
+}#
+#
+agg_class <- function(x,alpha,allPars){#
+    n_row = nrow(x)#
+    index = allPars[,1]#
+    theta = allPars[,2]#
+    m = allPars[,3]#
+    y_hat = rep(0,n_row)#
+    for (i in 1:length(index)){#
+        label = classify(x,pars)#
+        y_hat = y_hat + alpha[i]*label#
+    }#
+    y_hat = sign(y_hat)#
+    return (y_hat)#
+}#
+adaboost <- function(x,y){#
+    weight <- rep(0.005,200)#
+    n_row = nrow(x)#
+    n_test = round(n_row*0.2)#
+    test = sort(sample(1:n_row,n_test))#
+    x_test = x[test,]#
+    x_train = x[-test,]#
+    y_test = y[test,]#
+    y_train = y[-test,]#
+    weight_test = weight[test]#
+    weight_train = weight[-test]#
+    valid = sample(1:nrow(x_train))#
+    start <- round(seq(0,4)*length(valid)/5)+1#
+    end <- round(seq(1,5)*length(valid)/5)#
+    k = 5#
+    train_error_rate <- rep(Inf, k)#
+    alpha <- rep(Inf,k)#
+    for (b in 1:k){#
+        pars <- train(x,y,weight_train)#
+        error <- rep(Inf,5)#
+        comp_error <- rep(Inf, 5)#
+        y_train_bar = classify(x_train, pars)#
+        comp_error = sum(weight_train[y_train_bar!=y_bar])/sum(weight_train)#
+        alpha[b] = log((1-comp_error)/comp_error)#
+        weight_train[y_train_bar!=y_bar] = weight_train[y_train_bar!=y_bar]*exp(alpha[b])#
+#        for (j in 1:5){#
+#            y_bar = classify(x_train[sort(valid[start[j]:end[j]]),],pars)#
+#            error[j] = sum(y_bar!=y_train[sort(valid[start[j]:end[j]])])/(length(valid)/5)#
+#            comp_error[j] = sum(weight_train[sort(valid[start[j]:end[j]])][y_train[sort(valid[start[j]:end[j]])] != y_bar])#
+#
+#        }#
+#
+        if (b == 1){#
+            allPars = pars#
+        }#
+        else{#
+            allPars = rbind(allPars, pars)#
+        }#
+    }#
+#
+}#
+#
+# main body of AdaBoost#
+x = read.table("/Users/kshen4/Dropbox/Columbia/W4400 Statistcal Machine Learning/HW2/uspsdata/uspsdata.txt")#
+y = read.table("/Users/kshen4/Dropbox/Columbia/W4400 Statistcal Machine Learning/HW2/uspsdata/uspscl.txt")#
+adaboost(x,y)
+train <- function(x, y, weight){#
+    n_col = ncol(x)#
+    n_row = nrow(x)#
+    theta <- Inf#
+    min <- Inf#
+    index = 1#
+    for (j in 1:n_col){#
+        x_new <- cbind(x[,j], y, weight)#
+        x_new <- x_new[order(x_new[,1]),]#
+        min_part = Inf#
+        theta_temp = x_new[1,1]#
+        m_part = 0#
+        for (k in 1:n_row-1){#
+            m_temp = 0#
+            mis_temp1 = sum(x_new[1:k,3][x_new[1:k,2]==-1]) + sum(x_new[(k+1):n_row,3][x_new[(k+1):n_row,2]==1])#
+            mis_temp2 = sum(x_new[1:k,3][x_new[1:k,2]==1]) + sum(x_new[(k+1):n_row,3][x_new[(k+1):n_row,2]==-1])#
+            if (sum(x_new[1:k,2]) <= 0){#
+                m_temp = 1#
+            }#
+            else{#
+                m_temp = -1#
+            }#
+            mis_temp = min(mis_temp1, mis_temp2)#
+            if (min_part > mis_temp){#
+                min_part = mis_temp#
+                if (k != 1){#
+                    theta_temp = x_new[k-1,1]#
+                    m_part = m_temp#
+                }#
+            }#
+#
+        }#
+        if (min > min_part){#
+            min = min_part#
+            index = j#
+            theta = theta_temp#
+            m = m_part#
+        }#
+    }#
+    print (min)#
+    return (matrix(c(index,theta,m), nrow = 1, ncol = 3))#
+}#
+#
+classify <- function(x, pars){#
+    n_row = nrow(x)#
+    index = as.integer(pars[1])#
+    theta = pars[2]#
+    m = as.integer(pars[3])#
+    y_hat = rep(m,n_row)#
+    y_hat[x[,index]<=theta] = -m#
+    return (y_hat)#
+}#
+#
+agg_class <- function(x,alpha,allPars){#
+    n_row = nrow(x)#
+    index = allPars[,1]#
+    theta = allPars[,2]#
+    m = allPars[,3]#
+    y_hat = rep(0,n_row)#
+    for (i in 1:length(index)){#
+        label = classify(x,pars)#
+        y_hat = y_hat + alpha[i]*label#
+    }#
+    y_hat = sign(y_hat)#
+    return (y_hat)#
+}#
+adaboost <- function(x,y){#
+    weight <- rep(0.005,200)#
+    n_row = nrow(x)#
+    n_test = round(n_row*0.2)#
+    test = sort(sample(1:n_row,n_test))#
+    x_test = x[test,]#
+    x_train = x[-test,]#
+    y_test = y[test,]#
+    y_train = y[-test,]#
+    weight_test = weight[test]#
+    weight_train = weight[-test]#
+    valid = sample(1:nrow(x_train))#
+    start <- round(seq(0,4)*length(valid)/5)+1#
+    end <- round(seq(1,5)*length(valid)/5)#
+    k = 5#
+    train_error_rate <- rep(Inf, k)#
+    alpha <- rep(Inf,k)#
+    for (b in 1:k){#
+        pars <- train(x_train,y_train,weight_train)#
+        error <- rep(Inf,5)#
+        comp_error <- rep(Inf, 5)#
+        y_train_bar = classify(x_train, pars)#
+        comp_error = sum(weight_train[y_train_bar!=y_bar])/sum(weight_train)#
+        alpha[b] = log((1-comp_error)/comp_error)#
+        weight_train[y_train_bar!=y_bar] = weight_train[y_train_bar!=y_bar]*exp(alpha[b])#
+#        for (j in 1:5){#
+#            y_bar = classify(x_train[sort(valid[start[j]:end[j]]),],pars)#
+#            error[j] = sum(y_bar!=y_train[sort(valid[start[j]:end[j]])])/(length(valid)/5)#
+#            comp_error[j] = sum(weight_train[sort(valid[start[j]:end[j]])][y_train[sort(valid[start[j]:end[j]])] != y_bar])#
+#
+#        }#
+#
+        if (b == 1){#
+            allPars = pars#
+        }#
+        else{#
+            allPars = rbind(allPars, pars)#
+        }#
+    }#
+#
+}#
+#
+# main body of AdaBoost#
+x = read.table("/Users/kshen4/Dropbox/Columbia/W4400 Statistcal Machine Learning/HW2/uspsdata/uspsdata.txt")#
+y = read.table("/Users/kshen4/Dropbox/Columbia/W4400 Statistcal Machine Learning/HW2/uspsdata/uspscl.txt")#
+adaboost(x,y)#
+pars = train(x,y,weight)#
+label = classify(x,pars)#
+c_hat = agg_class(x,1,pars)#
+proc.time()
+train <- function(x, y, weight){#
+    n_col = ncol(x)#
+    n_row = nrow(x)#
+    theta <- Inf#
+    min <- Inf#
+    index = 1#
+    for (j in 1:n_col){#
+        x_new <- cbind(x[,j], y, weight)#
+        x_new <- x_new[order(x_new[,1]),]#
+        min_part = Inf#
+        theta_temp = x_new[1,1]#
+        m_part = 0#
+        for (k in 1:n_row-1){#
+            m_temp = 0#
+            mis_temp1 = sum(x_new[1:k,3][x_new[1:k,2]==-1]) + sum(x_new[(k+1):n_row,3][x_new[(k+1):n_row,2]==1])#
+            mis_temp2 = sum(x_new[1:k,3][x_new[1:k,2]==1]) + sum(x_new[(k+1):n_row,3][x_new[(k+1):n_row,2]==-1])#
+            if (sum(x_new[1:k,2]) <= 0){#
+                m_temp = 1#
+            }#
+            else{#
+                m_temp = -1#
+            }#
+            mis_temp = min(mis_temp1, mis_temp2)#
+            if (min_part > mis_temp){#
+                min_part = mis_temp#
+                if (k != 1){#
+                    theta_temp = x_new[k-1,1]#
+                    m_part = m_temp#
+                }#
+            }#
+#
+        }#
+        if (min > min_part){#
+            min = min_part#
+            index = j#
+            theta = theta_temp#
+            m = m_part#
+        }#
+    }#
+    print (min)#
+    return (matrix(c(index,theta,m), nrow = 1, ncol = 3))#
+}#
+#
+classify <- function(x, pars){#
+    n_row = nrow(x)#
+    index = as.integer(pars[1])#
+    theta = pars[2]#
+    m = as.integer(pars[3])#
+    y_hat = rep(m,n_row)#
+    y_hat[x[,index]<=theta] = -m#
+    return (y_hat)#
+}#
+#
+agg_class <- function(x,alpha,allPars){#
+    n_row = nrow(x)#
+    index = allPars[,1]#
+    theta = allPars[,2]#
+    m = allPars[,3]#
+    y_hat = rep(0,n_row)#
+    for (i in 1:length(index)){#
+        label = classify(x,pars)#
+        y_hat = y_hat + alpha[i]*label#
+    }#
+    y_hat = sign(y_hat)#
+    return (y_hat)#
+}#
+adaboost <- function(x,y){#
+    weight <- rep(0.005,200)#
+    n_row = nrow(x)#
+    n_test = round(n_row*0.2)#
+    test = sort(sample(1:n_row,n_test))#
+    x_test = x[test,]#
+    x_train = x[-test,]#
+    y_test = y[test,]#
+    y_train = y[-test,]#
+    weight_test = weight[test]#
+    weight_train = weight[-test]#
+    valid = sample(1:nrow(x_train))#
+    start <- round(seq(0,4)*length(valid)/5)+1#
+    end <- round(seq(1,5)*length(valid)/5)#
+    k = 5#
+    train_error_rate <- rep(Inf, k)#
+    alpha <- rep(Inf,k)#
+    for (b in 1:k){#
+        pars <- train(x_train,y_train,weight_train)#
+        error <- rep(Inf,5)#
+        comp_error <- rep(Inf, 5)#
+        y_train_bar = classify(x_train, pars)#
+        comp_error = sum(weight_train[y_train_bar!=y_bar])/sum(weight_train)#
+        alpha[b] = log((1-comp_error)/comp_error)#
+        weight_train[y_train_bar!=y_bar] = weight_train[y_train_bar!=y_bar]*exp(alpha[b])#
+#        for (j in 1:5){#
+#            y_bar = classify(x_train[sort(valid[start[j]:end[j]]),],pars)#
+#            error[j] = sum(y_bar!=y_train[sort(valid[start[j]:end[j]])])/(length(valid)/5)#
+#            comp_error[j] = sum(weight_train[sort(valid[start[j]:end[j]])][y_train[sort(valid[start[j]:end[j]])] != y_bar])#
+#
+#        }#
+#
+        if (b == 1){#
+            allPars = pars#
+        }#
+        else{#
+            allPars = rbind(allPars, pars)#
+        }#
+    }#
+#
+}#
+#
+# main body of AdaBoost#
+x = read.table("/Users/kshen4/Dropbox/Columbia/W4400 Statistcal Machine Learning/HW2/uspsdata/uspsdata.txt")#
+y = read.table("/Users/kshen4/Dropbox/Columbia/W4400 Statistcal Machine Learning/HW2/uspsdata/uspscl.txt")#
+adaboost(x,y)#
+#pars = train(x,y,weight)#
+#label = classify(x,pars)#
+#c_hat = agg_class(x,1,pars)#
+proc.time()
+weight_train
+y_train_bar
+train <- function(x, y, weight){#
+    n_col = ncol(x)#
+    n_row = nrow(x)#
+    theta <- Inf#
+    min <- Inf#
+    index = 1#
+    for (j in 1:n_col){#
+        x_new <- cbind(x[,j], y, weight)#
+        x_new <- x_new[order(x_new[,1]),]#
+        min_part = Inf#
+        theta_temp = x_new[1,1]#
+        m_part = 0#
+        for (k in 1:n_row-1){#
+            m_temp = 0#
+            mis_temp1 = sum(x_new[1:k,3][x_new[1:k,2]==-1]) + sum(x_new[(k+1):n_row,3][x_new[(k+1):n_row,2]==1])#
+            mis_temp2 = sum(x_new[1:k,3][x_new[1:k,2]==1]) + sum(x_new[(k+1):n_row,3][x_new[(k+1):n_row,2]==-1])#
+            if (sum(x_new[1:k,2]) <= 0){#
+                m_temp = 1#
+            }#
+            else{#
+                m_temp = -1#
+            }#
+            mis_temp = min(mis_temp1, mis_temp2)#
+            if (min_part > mis_temp){#
+                min_part = mis_temp#
+                if (k != 1){#
+                    theta_temp = x_new[k-1,1]#
+                    m_part = m_temp#
+                }#
+            }#
+#
+        }#
+        if (min > min_part){#
+            min = min_part#
+            index = j#
+            theta = theta_temp#
+            m = m_part#
+        }#
+    }#
+    print (min)#
+    return (matrix(c(index,theta,m), nrow = 1, ncol = 3))#
+}#
+#
+classify <- function(x, pars){#
+    n_row = nrow(x)#
+    index = as.integer(pars[1])#
+    theta = pars[2]#
+    m = as.integer(pars[3])#
+    y_hat = rep(m,n_row)#
+    y_hat[x[,index]<=theta] = -m#
+    return (y_hat)#
+}#
+#
+agg_class <- function(x,alpha,allPars){#
+    n_row = nrow(x)#
+    index = allPars[,1]#
+    theta = allPars[,2]#
+    m = allPars[,3]#
+    y_hat = rep(0,n_row)#
+    for (i in 1:length(index)){#
+        label = classify(x,pars)#
+        y_hat = y_hat + alpha[i]*label#
+    }#
+    y_hat = sign(y_hat)#
+    return (y_hat)#
+}#
+adaboost <- function(x,y){#
+    weight <- rep(0.005,200)#
+    n_row = nrow(x)#
+    n_test = round(n_row*0.2)#
+    test = sort(sample(1:n_row,n_test))#
+    x_test = x[test,]#
+    x_train = x[-test,]#
+    y_test = y[test,]#
+    y_train = y[-test,]#
+    weight_test = weight[test]#
+    weight_train = weight[-test]#
+    valid = sample(1:nrow(x_train))#
+    start <- round(seq(0,4)*length(valid)/5)+1#
+    end <- round(seq(1,5)*length(valid)/5)#
+    k = 5#
+    train_error_rate <- rep(Inf, k)#
+    alpha <- rep(Inf,k)#
+    for (b in 1:k){#
+        pars <- train(x_train,y_train,weight_train)#
+        error <- rep(Inf,5)#
+        comp_error <- rep(Inf, 5)#
+        y_train_bar = classify(x_train, pars)#
+        comp_error = sum(weight_train[y_train_bar!=y_bar])/sum(weight_train)#
+        alpha[b] = log((1-comp_error)/comp_error)#
+        weight_train[y_train_bar!=y_bar] = (weight_train[y_train_bar!=y_bar])*exp(alpha[b])#
+        print(weight_train)#
+#        for (j in 1:5){#
+#            y_bar = classify(x_train[sort(valid[start[j]:end[j]]),],pars)#
+#            error[j] = sum(y_bar!=y_train[sort(valid[start[j]:end[j]])])/(length(valid)/5)#
+#            comp_error[j] = sum(weight_train[sort(valid[start[j]:end[j]])][y_train[sort(valid[start[j]:end[j]])] != y_bar])#
+#
+#        }#
+#
+        if (b == 1){#
+            allPars = pars#
+        }#
+        else{#
+            allPars = rbind(allPars, pars)#
+        }#
+    }#
+#
+}#
+#
+# main body of AdaBoost#
+x = read.table("/Users/kshen4/Dropbox/Columbia/W4400 Statistcal Machine Learning/HW2/uspsdata/uspsdata.txt")#
+y = read.table("/Users/kshen4/Dropbox/Columbia/W4400 Statistcal Machine Learning/HW2/uspsdata/uspscl.txt")#
+adaboost(x,y)
+allPars
+train <- function(x, y, weight){#
+    n_col = ncol(x)#
+    n_row = nrow(x)#
+    theta <- Inf#
+    min <- Inf#
+    index = 1#
+    for (j in 1:n_col){#
+        x_new <- cbind(x[,j], y, weight)#
+        x_new <- x_new[order(x_new[,1]),]#
+        min_part = Inf#
+        theta_temp = x_new[1,1]#
+        m_part = 0#
+        for (k in 1:n_row-1){#
+            m_temp = 0#
+            mis_temp1 = sum(x_new[1:k,3][x_new[1:k,2]==-1]) + sum(x_new[(k+1):n_row,3][x_new[(k+1):n_row,2]==1])#
+            mis_temp2 = sum(x_new[1:k,3][x_new[1:k,2]==1]) + sum(x_new[(k+1):n_row,3][x_new[(k+1):n_row,2]==-1])#
+            if (sum(x_new[1:k,2]) <= 0){#
+                m_temp = 1#
+            }#
+            else{#
+                m_temp = -1#
+            }#
+            mis_temp = min(mis_temp1, mis_temp2)#
+            if (min_part > mis_temp){#
+                min_part = mis_temp#
+                if (k != 1){#
+                    theta_temp = x_new[k-1,1]#
+                    m_part = m_temp#
+                }#
+            }#
+#
+        }#
+        if (min > min_part){#
+            min = min_part#
+            index = j#
+            theta = theta_temp#
+            m = m_part#
+        }#
+    }#
+    print (min)#
+    return (matrix(c(index,theta,m), nrow = 1, ncol = 3))#
+}#
+#
+classify <- function(x, pars){#
+    n_row = nrow(x)#
+    index = as.integer(pars[1])#
+    theta = pars[2]#
+    m = as.integer(pars[3])#
+    y_hat = rep(m,n_row)#
+    y_hat[x[,index]<=theta] = -m#
+    return (y_hat)#
+}#
+#
+agg_class <- function(x,alpha,allPars){#
+    n_row = nrow(x)#
+    index = allPars[,1]#
+    theta = allPars[,2]#
+    m = allPars[,3]#
+    y_hat = rep(0,n_row)#
+    for (i in 1:length(index)){#
+        label = classify(x,pars)#
+        y_hat = y_hat + alpha[i]*label#
+    }#
+    y_hat = sign(y_hat)#
+    return (y_hat)#
+}#
+adaboost <- function(x,y){#
+    weight <- rep(0.005,200)#
+    n_row = nrow(x)#
+    n_test = round(n_row*0.2)#
+    test = sort(sample(1:n_row,n_test))#
+    x_test = x[test,]#
+    x_train = x[-test,]#
+    y_test = y[test,]#
+    y_train = y[-test,]#
+    weight_test = weight[test]#
+    weight_train = weight[-test]#
+    valid = sample(1:nrow(x_train))#
+    start <- round(seq(0,4)*length(valid)/5)+1#
+    end <- round(seq(1,5)*length(valid)/5)#
+    k = 5#
+    train_error_rate <- rep(Inf, k)#
+    alpha <- rep(Inf,k)#
+    for (b in 1:k){#
+        pars <- train(x_train,y_train,weight_train)#
+        error <- rep(Inf,5)#
+        comp_error <- rep(Inf, 5)#
+        y_train_bar = classify(x_train, pars)#
+        comp_error = sum(weight_train[y_train_bar!=y_bar])/sum(weight_train)#
+        alpha[b] = log((1-comp_error)/comp_error)#
+        weight_train[y_train_bar!=y_bar] = (weight_train[y_train_bar!=y_bar])*exp(alpha[b])#
+        print(weight_train)#
+#        for (j in 1:5){#
+#            y_bar = classify(x_train[sort(valid[start[j]:end[j]]),],pars)#
+#            error[j] = sum(y_bar!=y_train[sort(valid[start[j]:end[j]])])/(length(valid)/5)#
+#            comp_error[j] = sum(weight_train[sort(valid[start[j]:end[j]])][y_train[sort(valid[start[j]:end[j]])] != y_bar])#
+#
+#        }#
+#
+        if (b == 1){#
+            allPars = pars#
+        }#
+        else{#
+            allPars = rbind(allPars, pars)#
+        }#
+    }#
+    print(allPars)#
+    print(comp_error)#
+#
+}#
+#
+# main body of AdaBoost#
+x = read.table("/Users/kshen4/Dropbox/Columbia/W4400 Statistcal Machine Learning/HW2/uspsdata/uspsdata.txt")#
+y = read.table("/Users/kshen4/Dropbox/Columbia/W4400 Statistcal Machine Learning/HW2/uspsdata/uspscl.txt")#
+adaboost(x,y)
+train <- function(x, y, weight){#
+    n_col = ncol(x)#
+    n_row = nrow(x)#
+    theta <- Inf#
+    min <- Inf#
+    index = 1#
+    for (j in 1:n_col){#
+        x_new <- cbind(x[,j], y, weight)#
+        x_new <- x_new[order(x_new[,1]),]#
+        min_part = Inf#
+        theta_temp = x_new[1,1]#
+        m_part = 0#
+        for (k in 1:n_row-1){#
+            m_temp = 0#
+            mis_temp1 = sum(x_new[1:k,3][x_new[1:k,2]==-1]) + sum(x_new[(k+1):n_row,3][x_new[(k+1):n_row,2]==1])#
+            mis_temp2 = sum(x_new[1:k,3][x_new[1:k,2]==1]) + sum(x_new[(k+1):n_row,3][x_new[(k+1):n_row,2]==-1])#
+            if (sum(x_new[1:k,2]) <= 0){#
+                m_temp = 1#
+            }#
+            else{#
+                m_temp = -1#
+            }#
+            mis_temp = min(mis_temp1, mis_temp2)#
+            if (min_part > mis_temp){#
+                min_part = mis_temp#
+                if (k != 1){#
+                    theta_temp = x_new[k-1,1]#
+                    m_part = m_temp#
+                }#
+            }#
+#
+        }#
+        if (min > min_part){#
+            min = min_part#
+            index = j#
+            theta = theta_temp#
+            m = m_part#
+        }#
+    }#
+    print (min)#
+    return (matrix(c(index,theta,m), nrow = 1, ncol = 3))#
+}#
+#
+classify <- function(x, pars){#
+    n_row = nrow(x)#
+    index = as.integer(pars[1])#
+    theta = pars[2]#
+    m = as.integer(pars[3])#
+    y_hat = rep(m,n_row)#
+    y_hat[x[,index]<=theta] = -m#
+    return (y_hat)#
+}#
+#
+agg_class <- function(x,alpha,allPars){#
+    n_row = nrow(x)#
+    index = allPars[,1]#
+    theta = allPars[,2]#
+    m = allPars[,3]#
+    y_hat = rep(0,n_row)#
+    for (i in 1:length(index)){#
+        label = classify(x,pars)#
+        y_hat = y_hat + alpha[i]*label#
+    }#
+    y_hat = sign(y_hat)#
+    return (y_hat)#
+}#
+adaboost <- function(x,y){#
+    weight <- rep(0.005,200)#
+    n_row = nrow(x)#
+    n_test = round(n_row*0.2)#
+    test = sort(sample(1:n_row,n_test))#
+    x_test = x[test,]#
+    x_train = x[-test,]#
+    y_test = y[test,]#
+    y_train = y[-test,]#
+    weight_test = weight[test]#
+    weight_train = weight[-test]#
+    valid = sample(1:nrow(x_train))#
+    start <- round(seq(0,4)*length(valid)/5)+1#
+    end <- round(seq(1,5)*length(valid)/5)#
+    k = 5#
+    train_error_rate <- rep(Inf, k)#
+    alpha <- rep(Inf,k)#
+    for (b in 1:k){#
+        pars <- train(x_train,y_train,weight_train)#
+        error <- rep(Inf,5)#
+        comp_error <- rep(Inf, 5)#
+        y_train_bar = classify(x_train, pars)#
+        comp_error = sum(weight_train[y_train_bar!=y_bar])/sum(weight_train)#
+        alpha[b] = log((1-comp_error)/comp_error)#
+        print("----------")#
+        print(alpha[b])#
+        weight_train[y_train_bar!=y_bar] = (weight_train[y_train_bar!=y_bar])*exp(alpha[b])#
+        print(weight_train)#
+#        for (j in 1:5){#
+#            y_bar = classify(x_train[sort(valid[start[j]:end[j]]),],pars)#
+#            error[j] = sum(y_bar!=y_train[sort(valid[start[j]:end[j]])])/(length(valid)/5)#
+#            comp_error[j] = sum(weight_train[sort(valid[start[j]:end[j]])][y_train[sort(valid[start[j]:end[j]])] != y_bar])#
+#
+#        }#
+#
+        if (b == 1){#
+            allPars = pars#
+        }#
+        else{#
+            allPars = rbind(allPars, pars)#
+        }#
+    }#
+    print(allPars)#
+    print(comp_error)#
+#
+}#
+#
+# main body of AdaBoost#
+x = read.table("/Users/kshen4/Dropbox/Columbia/W4400 Statistcal Machine Learning/HW2/uspsdata/uspsdata.txt")#
+y = read.table("/Users/kshen4/Dropbox/Columbia/W4400 Statistcal Machine Learning/HW2/uspsdata/uspscl.txt")#
+adaboost(x,y)#
+#pars = train(x,y,weight)#
+#label = classify(x,pars)#
+#c_hat = agg_class(x,1,pars)#
+proc.time()
+y_train_bar
+weight <- rep(0.005,200)#
+    n_row = nrow(x)#
+    n_test = round(n_row*0.2)#
+    test = sort(sample(1:n_row,n_test))#
+    x_test = x[test,]#
+    x_train = x[-test,]#
+    y_test = y[test,]#
+    y_train = y[-test,]#
+    weight_test = weight[test]#
+    weight_train = weight[-test]#
+    valid = sample(1:nrow(x_train))#
+    start <- round(seq(0,4)*length(valid)/5)+1#
+    end <- round(seq(1,5)*length(valid)/5)#
+    k = 5#
+    train_error_rate <- rep(Inf, k)#
+    alpha <- rep(Inf,k)
+pars <- train(x_train,y_train,weight_train)#
+        error <- rep(Inf,5)#
+        comp_error <- rep(Inf, 5)#
+        y_train_bar = classify(x_train, pars)
+sum(weight_train[y_train_bar!=y_bar])/sum(weight_train)
+alpha[b] = log((1-comp_error)/comp_error)#
+        print("----------")#
+        print(alpha[b])#
+        weight_train[y_train_bar!=y_bar] = (weight_train[y_train_bar!=y_bar])*exp(alpha[b])#
+        print(weight_train)
+train <- function(x, y, weight){#
+    n_col = ncol(x)#
+    n_row = nrow(x)#
+    theta <- Inf#
+    min <- Inf#
+    index = 1#
+    for (j in 1:n_col){#
+        x_new <- cbind(x[,j], y, weight)#
+        x_new <- x_new[order(x_new[,1]),]#
+        min_part = Inf#
+        theta_temp = x_new[1,1]#
+        m_part = 0#
+        for (k in 1:n_row-1){#
+            m_temp = 0#
+            mis_temp1 = sum(x_new[1:k,3][x_new[1:k,2]==-1]) + sum(x_new[(k+1):n_row,3][x_new[(k+1):n_row,2]==1])#
+            mis_temp2 = sum(x_new[1:k,3][x_new[1:k,2]==1]) + sum(x_new[(k+1):n_row,3][x_new[(k+1):n_row,2]==-1])#
+            if (mis_temp1 <= mis_temp2){#
+                m_temp = -1#
+            }#
+            else{#
+                m_temp = 1#
+            }#
+            mis_temp = min(mis_temp1, mis_temp2)#
+            if (min_part > mis_temp){#
+                min_part = mis_temp#
+                if (k != 1){#
+                    theta_temp = x_new[k-1,1]#
+                    m_part = m_temp#
+                }#
+            }#
+#
+        }#
+        if (min > min_part){#
+            min = min_part#
+            index = j#
+            theta = theta_temp#
+            m = m_part#
+        }#
+    }#
+    print (min)#
+    return (matrix(c(index,theta,m), nrow = 1, ncol = 3))#
+}#
+#
+classify <- function(x, pars){#
+    n_row = nrow(x)#
+    index = as.integer(pars[1])#
+    theta = pars[2]#
+    m = as.integer(pars[3])#
+    y_hat = rep(m,n_row)#
+    y_hat[x[,index]<=theta] = -m#
+    return (y_hat)#
+}#
+#
+agg_class <- function(x,alpha,allPars){#
+    n_row = nrow(x)#
+    index = allPars[,1]#
+    theta = allPars[,2]#
+    m = allPars[,3]#
+    y_hat = rep(0,n_row)#
+    for (i in 1:length(index)){#
+        label = classify(x,allPars[i,])#
+        y_hat = y_hat + alpha[i]*label#
+    }#
+    y_hat = sign(y_hat)#
+    return (y_hat)#
+}#
+# main body of AdaBoost#
+x = read.table("/Users/kshen4/Dropbox/Columbia/W4400 Statistcal Machine Learning/HW2/uspsdata/uspsdata.txt")#
+y = read.table("/Users/kshen4/Dropbox/Columbia/W4400 Statistcal Machine Learning/HW2/uspsdata/uspscl.txt")#
+#
+weight <- rep(0.005,200)#
+n_row = nrow(x)#
+n_test = round(n_row*0.2)#
+test = sort(sample(1:n_row,n_test))#
+x_test = x[test,]#
+x_train = x[-test,]#
+y_test = y[test,]#
+y_train = y[-test,]#
+weight_test = weight[test]#
+weight_train = weight[-test]#
+valid = sample(1:nrow(x_train))#
+start <- round(seq(0,4)*length(valid)/5)+1#
+end <- round(seq(1,5)*length(valid)/5)#
+k = 100#
+training_error <- rep(Inf, k)#
+test_error <- rep(Inf, k)#
+alpha <- rep(Inf,k)#
+for (b in 1:k){#
+    pars <- train(x_train,y_train,weight_train)#
+    error <- rep(Inf,5)#
+    comp_error <- rep(Inf, 5)#
+    y_train_bar = classify(x_train, pars)#
+    comp_error = sum(weight_train[y_train_bar!=y_train])/sum(weight_train)#
+    alpha[b] = log((1-comp_error)/comp_error)#
+    print("----------")#
+    print(alpha[b])#
+    weight_train[y_train_bar!=y_train] = (weight_train[y_train_bar!=y_train])*exp(alpha[b])#
+    print(weight_train)#
+    if (b == 1){#
+        allPars = pars#
+    }#
+    else{#
+        allPars = rbind(allPars, pars)#
+    }#
+    for (j in 1:5){#
+        y_hat = agg_class(x_train[sort(valid[start[j]:end[j]]),],alpha,allPars)#
+        error[j] = sum(y_hat!=y_train[sort(valid[start[j]:end[j]])])/(length(valid)/5)#
+#
+    }#
+    training_error[b] = mean(error)#
+    y_test_hat = agg_class(x_test,alpha,allPars)#
+    test_error[b] = sum(y_test_hat!=y_test)/length(y_test)#
+}#
+print(allPars)#
+print("comp_error")#
+print(comp_error)#
+print("training_error")#
+print(training_error)#
+print("test_error")#
+print(test_error)#
+#
+Step = c(1:k)#
+plot(Step,test_error,type="n",xlab = "Step", ylab = "Error Rate")#
+lines(Step,training_error, col = "blue")#
+lines(Step,test_error, col = "red")#
+legend("topright",c("Training","Test"), col = c("blue","red"), lty=1)#
+#pars = train(x,y,weight)#
+#label = classify(x,pars)#
+#c_hat = agg_class(x,1,pars)#
+proc.time()
+k <- [list]
+k <- list()
+k
+k[1] = 1
+k[1] = c(1,2,3)
+k <- list()
+k
+k[1] = c(1,2,3)
+q = c(1,2,3)
+k[1] = q
+a = c(1,2,3)
+b = c(3,4,5,6,7,8)
+b[1:3] = a
+b
+pars
+b[1:3] = pars
+b
+train <- function(x, y, weight){#
+    n_col = ncol(x)#
+    n_row = nrow(x)#
+    theta <- Inf#
+    min <- Inf#
+    index = 1#
+    for (j in 1:n_col){#
+        x_new <- cbind(x[,j], y, weight)#
+        x_new <- x_new[order(x_new[,1]),]#
+        min_part = Inf#
+        theta_temp = x_new[1,1]#
+        m_part = 0#
+        for (k in 1:n_row-1){#
+            m_temp = 0#
+            mis_temp1 = sum(x_new[1:k,3][x_new[1:k,2]==-1]) + sum(x_new[(k+1):n_row,3][x_new[(k+1):n_row,2]==1])#
+            mis_temp2 = sum(x_new[1:k,3][x_new[1:k,2]==1]) + sum(x_new[(k+1):n_row,3][x_new[(k+1):n_row,2]==-1])#
+            if (mis_temp1 <= mis_temp2){#
+                m_temp = -1#
+            }#
+            else{#
+                m_temp = 1#
+            }#
+            mis_temp = min(mis_temp1, mis_temp2)#
+            if (min_part > mis_temp){#
+                min_part = mis_temp#
+                if (k != 1){#
+                    theta_temp = x_new[k-1,1]#
+                    m_part = m_temp#
+                }#
+            }#
+#
+        }#
+        if (min > min_part){#
+            min = min_part#
+            index = j#
+            theta = theta_temp#
+            m = m_part#
+        }#
+    }#
+    print (min)#
+    return (matrix(c(index,theta,m), nrow = 1, ncol = 3))#
+}#
+#
+classify <- function(x, pars){#
+    n_row = nrow(x)#
+    index = as.integer(pars[1])#
+    theta = pars[2]#
+    m = as.integer(pars[3])#
+    y_hat = rep(m,n_row)#
+    y_hat[x[,index]<=theta] = -m#
+    return (y_hat)#
+}#
+#
+agg_class <- function(x,alpha,allPars){#
+    n_row = nrow(x)#
+    index = allPars[,1]#
+    theta = allPars[,2]#
+    m = allPars[,3]#
+    y_hat = rep(0,n_row)#
+    for (i in 1:length(index)){#
+        label = classify(x,allPars[i,])#
+        y_hat = y_hat + alpha[i]*label#
+    }#
+    y_hat = sign(y_hat)#
+    return (y_hat)#
+}#
+# main body of AdaBoost#
+x = read.table("/Users/kshen4/Dropbox/Columbia/W4400 Statistcal Machine Learning/HW2/uspsdata/uspsdata.txt")#
+y = read.table("/Users/kshen4/Dropbox/Columbia/W4400 Statistcal Machine Learning/HW2/uspsdata/uspscl.txt")#
+#
+weight <- rep(0.005,200)#
+n_row = nrow(x)#
+n_test = round(n_row*0.2)#
+test = sort(sample(1:n_row,n_test))#
+x_test = x[test,]#
+x_train = x[-test,]#
+y_test = y[test,]#
+y_train = y[-test,]#
+weight_test = weight[test]#
+weight_train = weight[-test]#
+valid = sample(1:nrow(x_train))#
+start <- round(seq(0,4)*length(valid)/5)+1#
+end <- round(seq(1,5)*length(valid)/5)#
+k = 100#
+training_error <- rep(Inf, k)#
+test_error <- rep(Inf, k)#
+alpha <- rep(Inf,k)#
+#
+weight_train_temp <- matrix(rep(0.005,160), ncol = 5, nrow = 32)#
+alpha_temp <- matrix(rep(Inf, 5*k), ncol = 5, nrow = k)#
+allPars_temp <- matrix(rep(Inf,15*100), ncol = 15, nrow = 100)#
+for (b in 1:k){#
+    pars <- train(x_train,y_train,weight_train)#
+    error <- rep(Inf,5)#
+    comp_error <- rep(Inf, 5)#
+    y_train_bar = classify(x_train, pars)#
+    comp_error = sum(weight_train[y_train_bar!=y_train])/sum(weight_train)#
+    alpha[b] = log((1-comp_error)/comp_error)#
+    print("----------")#
+    print(alpha[b])#
+    weight_train[y_train_bar!=y_train] = (weight_train[y_train_bar!=y_train])*exp(alpha[b])#
+    print(weight_train)#
+    if (b == 1){#
+        allPars = pars#
+    }#
+    else{#
+        allPars = rbind(allPars, pars)#
+    }#
+    for (j in 1:5){#
+        pars_temp <- train(x_train[-sort(valid[start[j]:end[j]]),])#
+        y_temp_bar <- classify(x_train[-sort(valid[start[j]:end[j]]),],pars_temp)#
+        comp_error_temp <- sum(weight_train_temp[,j][y_temp_bar!=y_train[-sort(valid[start[j]:end[j]]),]])/sum(weight_train_temp[,j])#
+        alpha_temp[b,j] = log((1-comp_error_temp)/comp_error_temp)#
+        weight_train_temp[,j][y_temp_bar!=y_train[-sort(valid[start[j]:end[j]]),]]] = weight_train_temp[,j][y_temp_bar!=y_train[-sort(valid[start[j]:end[j]]),]]]*exp(alpha_temp[b,j])#
+        allPars_temp[b,(3*j-2):(3*j)] = pars_temp#
+#
+        y_hat = agg_class(x_train[sort(valid[start[j]:end[j]]),],alpha,allPars_temp[1:b,(3*j-2):(3*j)])#
+        error[j] = sum(y_hat!=y_train[sort(valid[start[j]:end[j]])])/(length(valid)/5)#
+#
+    }#
+    training_error[b] = mean(error)#
+    y_test_hat = agg_class(x_test,alpha,allPars)#
+    test_error[b] = sum(y_test_hat!=y_test)/length(y_test)#
+}#
+print(allPars)#
+print("comp_error")#
+print(comp_error)#
+print("training_error")#
+print(training_error)#
+print("test_error")#
+print(test_error)#
+#
+Step = c(1:k)#
+plot(Step,test_error,type="n",xlab = "Step", ylab = "Error Rate")#
+lines(Step,training_error, col = "blue")#
+lines(Step,test_error, col = "red")#
+legend("topright",c("Training","Test"), col = c("blue","red"), lty=1)#
+#pars = train(x,y,weight)#
+#label = classify(x,pars)#
+#c_hat = agg_class(x,1,pars)#
+proc.time()
+train <- function(x, y, weight){#
+    n_col = ncol(x)#
+    n_row = nrow(x)#
+    theta <- Inf#
+    min <- Inf#
+    index = 1#
+    for (j in 1:n_col){#
+        x_new <- cbind(x[,j], y, weight)#
+        x_new <- x_new[order(x_new[,1]),]#
+        min_part = Inf#
+        theta_temp = x_new[1,1]#
+        m_part = 0#
+        for (k in 1:n_row-1){#
+            m_temp = 0#
+            mis_temp1 = sum(x_new[1:k,3][x_new[1:k,2]==-1]) + sum(x_new[(k+1):n_row,3][x_new[(k+1):n_row,2]==1])#
+            mis_temp2 = sum(x_new[1:k,3][x_new[1:k,2]==1]) + sum(x_new[(k+1):n_row,3][x_new[(k+1):n_row,2]==-1])#
+            if (mis_temp1 <= mis_temp2){#
+                m_temp = -1#
+            }#
+            else{#
+                m_temp = 1#
+            }#
+            mis_temp = min(mis_temp1, mis_temp2)#
+            if (min_part > mis_temp){#
+                min_part = mis_temp#
+                if (k != 1){#
+                    theta_temp = x_new[k-1,1]#
+                    m_part = m_temp#
+                }#
+            }#
+#
+        }#
+        if (min > min_part){#
+            min = min_part#
+            index = j#
+            theta = theta_temp#
+            m = m_part#
+        }#
+    }#
+    print (min)#
+    return (matrix(c(index,theta,m), nrow = 1, ncol = 3))#
+}#
+#
+classify <- function(x, pars){#
+    n_row = nrow(x)#
+    index = as.integer(pars[1])#
+    theta = pars[2]#
+    m = as.integer(pars[3])#
+    y_hat = rep(m,n_row)#
+    y_hat[x[,index]<=theta] = -m#
+    return (y_hat)#
+}#
+#
+agg_class <- function(x,alpha,allPars){#
+    n_row = nrow(x)#
+    index = allPars[,1]#
+    theta = allPars[,2]#
+    m = allPars[,3]#
+    y_hat = rep(0,n_row)#
+    for (i in 1:length(index)){#
+        label = classify(x,allPars[i,])#
+        y_hat = y_hat + alpha[i]*label#
+    }#
+    y_hat = sign(y_hat)#
+    return (y_hat)#
+}#
+# main body of AdaBoost#
+x = read.table("/Users/kshen4/Dropbox/Columbia/W4400 Statistcal Machine Learning/HW2/uspsdata/uspsdata.txt")#
+y = read.table("/Users/kshen4/Dropbox/Columbia/W4400 Statistcal Machine Learning/HW2/uspsdata/uspscl.txt")#
+#
+weight <- rep(0.005,200)#
+n_row = nrow(x)#
+n_test = round(n_row*0.2)#
+test = sort(sample(1:n_row,n_test))#
+x_test = x[test,]#
+x_train = x[-test,]#
+y_test = y[test,]#
+y_train = y[-test,]#
+weight_test = weight[test]#
+weight_train = weight[-test]#
+valid = sample(1:nrow(x_train))#
+start <- round(seq(0,4)*length(valid)/5)+1#
+end <- round(seq(1,5)*length(valid)/5)#
+k = 100#
+training_error <- rep(Inf, k)#
+test_error <- rep(Inf, k)#
+alpha <- rep(Inf,k)#
+#
+weight_train_temp <- matrix(rep(0.005,160), ncol = 5, nrow = 32)#
+alpha_temp <- matrix(rep(Inf, 5*k), ncol = 5, nrow = k)#
+allPars_temp <- matrix(rep(Inf,15*100), ncol = 15, nrow = 100)#
+for (b in 1:k){#
+    pars <- train(x_train,y_train,weight_train)#
+    error <- rep(Inf,5)#
+    comp_error <- rep(Inf, 5)#
+    y_train_bar = classify(x_train, pars)#
+    comp_error = sum(weight_train[y_train_bar!=y_train])/sum(weight_train)#
+    alpha[b] = log((1-comp_error)/comp_error)#
+    print("----------")#
+    print(alpha[b])#
+    weight_train[y_train_bar!=y_train] = (weight_train[y_train_bar!=y_train])*exp(alpha[b])#
+    print(weight_train)#
+    if (b == 1){#
+        allPars = pars#
+    }#
+    else{#
+        allPars = rbind(allPars, pars)#
+    }#
+    for (j in 1:5){#
+        pars_temp <- train(x_train[-sort(valid[start[j]:end[j]]),])#
+        y_temp_bar <- classify(x_train[-sort(valid[start[j]:end[j]]),],pars_temp)#
+        comp_error_temp <- sum(weight_train_temp[,j][y_temp_bar!=y_train[-sort(valid[start[j]:end[j]]),]])/sum(weight_train_temp[,j])#
+        alpha_temp[b,j] = log((1-comp_error_temp)/comp_error_temp)#
+        weight_train_temp[,j][y_temp_bar!=y_train[-sort(valid[start[j]:end[j]]),]]] = weight_train_temp[,j][y_temp_bar!=y_train[-sort(valid[start[j]:end[j]]),]]]*exp(alpha_temp[b,j])#
+        allPars_temp[b,(3*j-2):(3*j)] = pars_temp#
+#
+        y_hat = agg_class(x_train[sort(valid[start[j]:end[j]]),],alpha,allPars_temp[1:b,(3*j-2):(3*j)])#
+        error[j] = sum(y_hat!=y_train[sort(valid[start[j]:end[j]])])/(length(valid)/5)#
+#
+    }#
+    training_error[b] = mean(error)#
+    y_test_hat = agg_class(x_test,alpha,allPars)#
+    test_error[b] = sum(y_test_hat!=y_test)/length(y_test)#
+}
+pars_temp
+j = 1
+pars_temp <- train(x_train[-sort(valid[start[j]:end[j]]),])
+j = 1
+pars_temp <- train(x_train[-sort(valid[start[j]:end[j]]),],y_train[-sort(valid[start[j]:end[j]]),],weight_train_temp[,j])
+y_train
+pars_temp <- train(x_train[-sort(valid[start[j]:end[j]]),],y_train[-sort(valid[start[j]:end[j]])],weight_train_temp[,j])
+pars_temp
+dim(x_train[-sort(valid[start[j]:end[j]]),])
+128+32
+y_temp_bar <- classify(x_train[-sort(valid[start[j]:end[j]]),],pars_temp)
+y_temp_bar
+comp_error_temp <- sum(weight_train_temp[,j][y_temp_bar!=y_train[-sort(valid[start[j]:end[j]])]])/sum(weight_train_temp[,j])
+comp_error_temp
+y_temp_bar!=y_train[-sort(valid[start[j]:end[j]])]]
+[y_temp_bar!=y_train[-sort(valid[start[j]:end[j]])]]
+y_train[-sort(valid[start[j]:end[j]])]]
+y_train[-sort(valid[start[j]:end[j]])]
+y_temp_bar!=y_train[-sort(valid[start[j]:end[j]])]
+weight_train_temp
+sum(weight_train_temp[,j][y_temp_bar!=y_train[-sort(valid[start[j]:end[j]])]])
+weight_train_temp <- matrix(rep(0.005,160*5), ncol = 5, nrow = 160)
+comp_error_temp <- sum(weight_train_temp[,j][y_temp_bar!=y_train[-sort(valid[start[j]:end[j]])]])/sum(weight_train_temp[,j])
+comp_error_temp
+alpha_temp[b,j] = log((1-comp_error_temp)/comp_error_temp)
+weight_train_temp[,j][y_temp_bar!=y_train[-sort(valid[start[j]:end[j]])]] = weight_train_temp[,j][y_temp_bar!=y_train[-sort(valid[start[j]:end[j]])]]*exp(alpha_temp[b,j])
+alpha_temp[b,j]
+b
+train <- function(x, y, weight){#
+    n_col = ncol(x)#
+    n_row = nrow(x)#
+    theta <- Inf#
+    min <- Inf#
+    index = 1#
+    for (j in 1:n_col){#
+        x_new <- cbind(x[,j], y, weight)#
+        x_new <- x_new[order(x_new[,1]),]#
+        min_part = Inf#
+        theta_temp = x_new[1,1]#
+        m_part = 0#
+        for (k in 1:n_row-1){#
+            m_temp = 0#
+            mis_temp1 = sum(x_new[1:k,3][x_new[1:k,2]==-1]) + sum(x_new[(k+1):n_row,3][x_new[(k+1):n_row,2]==1])#
+            mis_temp2 = sum(x_new[1:k,3][x_new[1:k,2]==1]) + sum(x_new[(k+1):n_row,3][x_new[(k+1):n_row,2]==-1])#
+            if (mis_temp1 <= mis_temp2){#
+                m_temp = -1#
+            }#
+            else{#
+                m_temp = 1#
+            }#
+            mis_temp = min(mis_temp1, mis_temp2)#
+            if (min_part > mis_temp){#
+                min_part = mis_temp#
+                if (k != 1){#
+                    theta_temp = x_new[k-1,1]#
+                    m_part = m_temp#
+                }#
+            }#
+#
+        }#
+        if (min > min_part){#
+            min = min_part#
+            index = j#
+            theta = theta_temp#
+            m = m_part#
+        }#
+    }#
+    print (min)#
+    return (matrix(c(index,theta,m), nrow = 1, ncol = 3))#
+}#
+#
+classify <- function(x, pars){#
+    n_row = nrow(x)#
+    index = as.integer(pars[1])#
+    theta = pars[2]#
+    m = as.integer(pars[3])#
+    y_hat = rep(m,n_row)#
+    y_hat[x[,index]<=theta] = -m#
+    return (y_hat)#
+}#
+#
+agg_class <- function(x,alpha,allPars){#
+    n_row = nrow(x)#
+    index = allPars[,1]#
+    theta = allPars[,2]#
+    m = allPars[,3]#
+    y_hat = rep(0,n_row)#
+    for (i in 1:length(index)){#
+        label = classify(x,allPars[i,])#
+        y_hat = y_hat + alpha[i]*label#
+    }#
+    y_hat = sign(y_hat)#
+    return (y_hat)#
+}#
+# main body of AdaBoost#
+x = read.table("/Users/kshen4/Dropbox/Columbia/W4400 Statistcal Machine Learning/HW2/uspsdata/uspsdata.txt")#
+y = read.table("/Users/kshen4/Dropbox/Columbia/W4400 Statistcal Machine Learning/HW2/uspsdata/uspscl.txt")#
+#
+weight <- rep(0.005,200)#
+n_row = nrow(x)#
+n_test = round(n_row*0.2)#
+test = sort(sample(1:n_row,n_test))#
+x_test = x[test,]#
+x_train = x[-test,]#
+y_test = y[test,]#
+y_train = y[-test,]#
+weight_test = weight[test]#
+weight_train = weight[-test]#
+valid = sample(1:nrow(x_train))#
+start <- round(seq(0,4)*length(valid)/5)+1#
+end <- round(seq(1,5)*length(valid)/5)#
+k = 100#
+training_error <- rep(Inf, k)#
+test_error <- rep(Inf, k)#
+alpha <- rep(Inf,k)#
+#
+weight_train_temp <- matrix(rep(0.005,160*5), ncol = 5, nrow = 160)#
+alpha_temp <- matrix(rep(Inf, 5*k), ncol = 5, nrow = k)#
+allPars_temp <- matrix(rep(Inf,15*100), ncol = 15, nrow = 100)#
+for (b in 1:k){#
+    pars <- train(x_train,y_train,weight_train)#
+    error <- rep(Inf,5)#
+    comp_error <- rep(Inf, 5)#
+    y_train_bar = classify(x_train, pars)#
+    comp_error = sum(weight_train[y_train_bar!=y_train])/sum(weight_train)#
+    alpha[b] = log((1-comp_error)/comp_error)#
+    print("----------")#
+    print(alpha[b])#
+    weight_train[y_train_bar!=y_train] = (weight_train[y_train_bar!=y_train])*exp(alpha[b])#
+    print(weight_train)#
+    if (b == 1){#
+        allPars = pars#
+    }#
+    else{#
+        allPars = rbind(allPars, pars)#
+    }#
+    for (j in 1:5){#
+        pars_temp <- train(x_train[-sort(valid[start[j]:end[j]]),],y_train[-sort(valid[start[j]:end[j]])],weight_train_temp[,j])#
+        y_temp_bar <- classify(x_train[-sort(valid[start[j]:end[j]]),],pars_temp)#
+        comp_error_temp <- sum(weight_train_temp[,j][y_temp_bar!=y_train[-sort(valid[start[j]:end[j]])]])/sum(weight_train_temp[,j])#
+        alpha_temp[b,j] = log((1-comp_error_temp)/comp_error_temp)#
+        weight_train_temp[,j][y_temp_bar!=y_train[-sort(valid[start[j]:end[j]])]] = weight_train_temp[,j][y_temp_bar!=y_train[-sort(valid[start[j]:end[j]])]]*exp(alpha_temp[b,j])#
+        allPars_temp[b,(3*j-2):(3*j)] = pars_temp#
+#
+        y_hat = agg_class(x_train[sort(valid[start[j]:end[j]]),],alpha,allPars_temp[1:b,(3*j-2):(3*j)])#
+        error[j] = sum(y_hat!=y_train[sort(valid[start[j]:end[j]])])/(length(valid)/5)#
+#
+    }#
+    training_error[b] = mean(error)#
+    y_test_hat = agg_class(x_test,alpha,allPars)#
+    test_error[b] = sum(y_test_hat!=y_test)/length(y_test)#
+}#
+print(allPars)#
+print("comp_error")#
+print(comp_error)#
+print("training_error")#
+print(training_error)#
+print("test_error")#
+print(test_error)#
+#
+Step = c(1:k)#
+plot(Step,test_error,type="n",xlab = "Step", ylab = "Error Rate")#
+lines(Step,training_error, col = "blue")#
+lines(Step,test_error, col = "red")#
+legend("topright",c("Training","Test"), col = c("blue","red"), lty=1)#
+#pars = train(x,y,weight)#
+#label = classify(x,pars)#
+#c_hat = agg_class(x,1,pars)#
+proc.time()
+b = 1
+j = 1
+pars_temp <- train(x_train[-sort(valid[start[j]:end[j]]),],y_train[-sort(valid[start[j]:end[j]])],weight_train_temp[,j])#
+        y_temp_bar <- classify(x_train[-sort(valid[start[j]:end[j]]),],pars_temp)#
+        comp_error_temp <- sum(weight_train_temp[,j][y_temp_bar!=y_train[-sort(valid[start[j]:end[j]])]])/sum(weight_train_temp[,j])#
+        alpha_temp[b,j] = log((1-comp_error_temp)/comp_error_temp)#
+        weight_train_temp[,j][y_temp_bar!=y_train[-sort(valid[start[j]:end[j]])]] = weight_train_temp[,j][y_temp_bar!=y_train[-sort(valid[start[j]:end[j]])]]*exp(alpha_temp[b,j])
+warining
+warings()
+warnings()
+k = 100#
+training_error <- rep(Inf, k)#
+test_error <- rep(Inf, k)#
+alpha <- rep(Inf,k)#
+#
+weight_train_temp <- matrix(rep(0.005,160*5), ncol = 5, nrow = 160)#
+alpha_temp <- matrix(rep(Inf, 5*k), ncol = 5, nrow = k)#
+allPars_temp <- matrix(rep(Inf,15*100), ncol = 15, nrow = 100)
+pars_temp <- train(x_train[-sort(valid[start[j]:end[j]]),],y_train[-sort(valid[start[j]:end[j]])],weight_train_temp[,j])#
+        y_temp_bar <- classify(x_train[-sort(valid[start[j]:end[j]]),],pars_temp)#
+        comp_error_temp <- sum(weight_train_temp[,j][y_temp_bar!=y_train[-sort(valid[start[j]:end[j]])]])/sum(weight_train_temp[,j])#
+        alpha_temp[b,j] = log((1-comp_error_temp)/comp_error_temp)#
+        weight_train_temp[,j][y_temp_bar!=y_train[-sort(valid[start[j]:end[j]])]] = weight_train_temp[,j][y_temp_bar!=y_train[-sort(valid[start[j]:end[j]])]]*exp(alpha_temp[b,j])
+pars_temp
+y_temp_bar
+weight_train_temp[,j]
+pars
+allPars_temp[b,(3*j-2):(3*j)] = pars_temp
+allPars_temp[1:b,(3*j-2):(3*j)])
+allPars_temp[1:b,(3*j-2):(3*j)]
+a = matrix(c(1,2,3,4,5,6), nrow = 2, ncol = 3)
+a
+a[1:1, 2:3]
+a[1:2, 2:3]
+pars_temp <- train(x_train[-sort(valid[start[j]:end[j]]),],y_train[-sort(valid[start[j]:end[j]])],weight_train_temp[,j])#
+        y_temp_bar <- classify(x_train[-sort(valid[start[j]:end[j]]),],pars_temp)#
+        comp_error_temp <- sum(weight_train_temp[,j][y_temp_bar!=y_train[-sort(valid[start[j]:end[j]])]])/sum(weight_train_temp[,j])#
+        alpha_temp[b,j] = log((1-comp_error_temp)/comp_error_temp)#
+        weight_train_temp[,j][y_temp_bar!=y_train[-sort(valid[start[j]:end[j]])]] = weight_train_temp[,j][y_temp_bar!=y_train[-sort(valid[start[j]:end[j]])]]*exp(alpha_temp[b,j])#
+        allPars_temp[b,(3*j-2):(3*j)] = pars_temp#
+        if (b ==1 ){#
+            ddd = matrix(allPars_temp[1:b,(3*j-2):(3*j)], nrow = 1, ncol = 3)#
+            y_hat = agg_class(x_train[sort(valid[start[j]:end[j]]),],alpha,ddd)#
+        }#
+        else{#
+            y_hat = agg_class(x_train[sort(valid[start[j]:end[j]]),],alpha,allPars_temp[1:b,(3*j-2):(3*j)])#
+        }#
+        error[j] = sum(y_hat!=y_train[sort(valid[start[j]:end[j]])])/(length(valid)/5)
+allPars_temp
+if (b ==1){#
+            ddd = matrix(allPars_temp[1:b,(3*j-2):(3*j)], nrow = 1, ncol = 3)#
+            y_hat = agg_class(x_train[sort(valid[start[j]:end[j]]),],alpha,ddd)#
+        }
+y_hat
+else{#
+            y_hat = agg_class(x_train[sort(valid[start[j]:end[j]]),],alpha,allPars_temp[1:b,(3*j-2):(3*j)])#
+        }
+if (b ==1){#
+            ddd = matrix(allPars_temp[1:b,(3*j-2):(3*j)], nrow = 1, ncol = 3)#
+            y_hat = agg_class(x_train[sort(valid[start[j]:end[j]]),],alpha,ddd)#
+        }#
+        else{#
+            y_hat = agg_class(x_train[sort(valid[start[j]:end[j]]),],alpha,allPars_temp[1:b,(3*j-2):(3*j)])#
+        }
+y_hat = agg_class(x_train[sort(valid[start[j]:end[j]]),],alpha,allPars_temp[1:b,(3*j-2):(3*j)])
+if (b ==1){#
+            ddd = matrix(allPars_temp[1:b,(3*j-2):(3*j)], nrow = 1, ncol = 3)#
+            y_hat = agg_class(x_train[sort(valid[start[j]:end[j]]),],alpha,ddd)#
+        }#
+        else{#
+            y_hat = agg_class(x_train[sort(valid[start[j]:end[j]]),],alpha,allPars_temp[1:b,(3*j-2):(3*j)])#
+        }
+if (b ==1){#
+            ddd = matrix(allPars_temp[1:b,(3*j-2):(3*j)], nrow = 1, ncol = 3)#
+            y_hat = agg_class(x_train[sort(valid[start[j]:end[j]]),],alpha,ddd)#
+        }#
+        if (b != 1){#
+            y_hat = agg_class(x_train[sort(valid[start[j]:end[j]]),],alpha,allPars_temp[1:b,(3*j-2):(3*j)])#
+        }
+train <- function(x, y, weight){#
+    n_col = ncol(x)#
+    n_row = nrow(x)#
+    theta <- Inf#
+    min <- Inf#
+    index = 1#
+    for (j in 1:n_col){#
+        x_new <- cbind(x[,j], y, weight)#
+        x_new <- x_new[order(x_new[,1]),]#
+        min_part = Inf#
+        theta_temp = x_new[1,1]#
+        m_part = 0#
+        for (k in 1:n_row-1){#
+            m_temp = 0#
+            mis_temp1 = sum(x_new[1:k,3][x_new[1:k,2]==-1]) + sum(x_new[(k+1):n_row,3][x_new[(k+1):n_row,2]==1])#
+            mis_temp2 = sum(x_new[1:k,3][x_new[1:k,2]==1]) + sum(x_new[(k+1):n_row,3][x_new[(k+1):n_row,2]==-1])#
+            if (mis_temp1 <= mis_temp2){#
+                m_temp = -1#
+            }#
+            else{#
+                m_temp = 1#
+            }#
+            mis_temp = min(mis_temp1, mis_temp2)#
+            if (min_part > mis_temp){#
+                min_part = mis_temp#
+                if (k != 1){#
+                    theta_temp = x_new[k-1,1]#
+                    m_part = m_temp#
+                }#
+            }#
+#
+        }#
+        if (min > min_part){#
+            min = min_part#
+            index = j#
+            theta = theta_temp#
+            m = m_part#
+        }#
+    }#
+    print (min)#
+    return (matrix(c(index,theta,m), nrow = 1, ncol = 3))#
+}#
+#
+classify <- function(x, pars){#
+    n_row = nrow(x)#
+    index = as.integer(pars[1])#
+    theta = pars[2]#
+    m = as.integer(pars[3])#
+    y_hat = rep(m,n_row)#
+    y_hat[x[,index]<=theta] = -m#
+    return (y_hat)#
+}#
+#
+agg_class <- function(x,alpha,allPars){#
+    n_row = nrow(x)#
+    y_hat = rep(0,n_row)#
+    for (i in 1:length(index)){#
+        label = classify(x,allPars[i,])#
+        y_hat = y_hat + alpha[i]*label#
+    }#
+    y_hat = sign(y_hat)#
+    return (y_hat)#
+}#
+# main body of AdaBoost#
+x = read.table("/Users/kshen4/Dropbox/Columbia/W4400 Statistcal Machine Learning/HW2/uspsdata/uspsdata.txt")#
+y = read.table("/Users/kshen4/Dropbox/Columbia/W4400 Statistcal Machine Learning/HW2/uspsdata/uspscl.txt")#
+#
+weight <- rep(0.005,200)#
+n_row = nrow(x)#
+n_test = round(n_row*0.2)#
+test = sort(sample(1:n_row,n_test))#
+x_test = x[test,]#
+x_train = x[-test,]#
+y_test = y[test,]#
+y_train = y[-test,]#
+weight_test = weight[test]#
+weight_train = weight[-test]#
+valid = sample(1:nrow(x_train))#
+start <- round(seq(0,4)*length(valid)/5)+1#
+end <- round(seq(1,5)*length(valid)/5)#
+k = 100#
+training_error <- rep(Inf, k)#
+test_error <- rep(Inf, k)#
+alpha <- rep(Inf,k)#
+#
+weight_train_temp <- matrix(rep(0.005,160*5), ncol = 5, nrow = 160)#
+alpha_temp <- matrix(rep(Inf, 5*k), ncol = 5, nrow = k)#
+allPars_temp <- matrix(rep(Inf,15*100), ncol = 15, nrow = 100)#
+for (b in 1:k){#
+    pars <- train(x_train,y_train,weight_train)#
+    error <- rep(Inf,5)#
+    comp_error <- rep(Inf, 5)#
+    y_train_bar = classify(x_train, pars)#
+    comp_error = sum(weight_train[y_train_bar!=y_train])/sum(weight_train)#
+    alpha[b] = log((1-comp_error)/comp_error)#
+    print("----------")#
+    print(alpha[b])#
+    weight_train[y_train_bar!=y_train] = (weight_train[y_train_bar!=y_train])*exp(alpha[b])#
+    print(weight_train)#
+    if (b == 1){#
+        allPars = pars#
+    }#
+    else{#
+        allPars = rbind(allPars, pars)#
+    }#
+    for (j in 1:5){#
+        pars_temp <- train(x_train[-sort(valid[start[j]:end[j]]),],y_train[-sort(valid[start[j]:end[j]])],weight_train_temp[,j])#
+        y_temp_bar <- classify(x_train[-sort(valid[start[j]:end[j]]),],pars_temp)#
+        comp_error_temp <- sum(weight_train_temp[,j][y_temp_bar!=y_train[-sort(valid[start[j]:end[j]])]])/sum(weight_train_temp[,j])#
+        alpha_temp[b,j] = log((1-comp_error_temp)/comp_error_temp)#
+        weight_train_temp[,j][y_temp_bar!=y_train[-sort(valid[start[j]:end[j]])]] = weight_train_temp[,j][y_temp_bar!=y_train[-sort(valid[start[j]:end[j]])]]*exp(alpha_temp[b,j])#
+        allPars_temp[b,(3*j-2):(3*j)] = pars_temp#
+        if (b ==1){#
+            ddd = matrix(allPars_temp[1:b,(3*j-2):(3*j)], nrow = 1, ncol = 3)#
+            y_hat = agg_class(x_train[sort(valid[start[j]:end[j]]),],alpha,ddd)#
+        }#
+        if (b != 1){#
+            y_hat = agg_class(x_train[sort(valid[start[j]:end[j]]),],alpha,allPars_temp[1:b,(3*j-2):(3*j)])#
+        }#
+        error[j] = sum(y_hat!=y_train[sort(valid[start[j]:end[j]])])/(length(valid)/5)#
+#
+    }#
+    training_error[b] = mean(error)#
+    y_test_hat = agg_class(x_test,alpha,allPars)#
+    test_error[b] = sum(y_test_hat!=y_test)/length(y_test)#
+}#
+print(allPars)#
+print("comp_error")#
+print(comp_error)#
+print("training_error")#
+print(training_error)#
+print("test_error")#
+print(test_error)
+train <- function(x, y, weight){#
+    n_col = ncol(x)#
+    n_row = nrow(x)#
+    theta <- Inf#
+    min <- Inf#
+    index = 1#
+    for (j in 1:n_col){#
+        x_new <- cbind(x[,j], y, weight)#
+        x_new <- x_new[order(x_new[,1]),]#
+        min_part = Inf#
+        theta_temp = x_new[1,1]#
+        m_part = 0#
+        for (k in 1:n_row-1){#
+            m_temp = 0#
+            mis_temp1 = sum(x_new[1:k,3][x_new[1:k,2]==-1]) + sum(x_new[(k+1):n_row,3][x_new[(k+1):n_row,2]==1])#
+            mis_temp2 = sum(x_new[1:k,3][x_new[1:k,2]==1]) + sum(x_new[(k+1):n_row,3][x_new[(k+1):n_row,2]==-1])#
+            if (mis_temp1 <= mis_temp2){#
+                m_temp = -1#
+            }#
+            else{#
+                m_temp = 1#
+            }#
+            mis_temp = min(mis_temp1, mis_temp2)#
+            if (min_part > mis_temp){#
+                min_part = mis_temp#
+                if (k != 1){#
+                    theta_temp = x_new[k-1,1]#
+                    m_part = m_temp#
+                }#
+            }#
+#
+        }#
+        if (min > min_part){#
+            min = min_part#
+            index = j#
+            theta = theta_temp#
+            m = m_part#
+        }#
+    }#
+    print (min)#
+    return (matrix(c(index,theta,m), nrow = 1, ncol = 3))#
+}#
+#
+classify <- function(x, pars){#
+    n_row = nrow(x)#
+    index = as.integer(pars[1])#
+    theta = pars[2]#
+    m = as.integer(pars[3])#
+    y_hat = rep(m,n_row)#
+    y_hat[x[,index]<=theta] = -m#
+    return (y_hat)#
+}#
+#
+agg_class <- function(x,alpha,allPars){#
+    n_row = nrow(x)#
+    y_hat = rep(0,n_row)#
+    index = as.integer(allPars[,1])#
+    for (i in 1:length(index)){#
+        label = classify(x,allPars[i,])#
+        y_hat = y_hat + alpha[i]*label#
+    }#
+    y_hat = sign(y_hat)#
+    return (y_hat)#
+}#
+# main body of AdaBoost#
+x = read.table("/Users/kshen4/Dropbox/Columbia/W4400 Statistcal Machine Learning/HW2/uspsdata/uspsdata.txt")#
+y = read.table("/Users/kshen4/Dropbox/Columbia/W4400 Statistcal Machine Learning/HW2/uspsdata/uspscl.txt")#
+#
+weight <- rep(0.005,200)#
+n_row = nrow(x)#
+n_test = round(n_row*0.2)#
+test = sort(sample(1:n_row,n_test))#
+x_test = x[test,]#
+x_train = x[-test,]#
+y_test = y[test,]#
+y_train = y[-test,]#
+weight_test = weight[test]#
+weight_train = weight[-test]#
+valid = sample(1:nrow(x_train))#
+start <- round(seq(0,4)*length(valid)/5)+1#
+end <- round(seq(1,5)*length(valid)/5)#
+k = 100#
+training_error <- rep(Inf, k)#
+test_error <- rep(Inf, k)#
+alpha <- rep(Inf,k)#
+#
+weight_train_temp <- matrix(rep(0.005,160*5), ncol = 5, nrow = 160)#
+alpha_temp <- matrix(rep(Inf, 5*k), ncol = 5, nrow = k)#
+allPars_temp <- matrix(rep(Inf,15*100), ncol = 15, nrow = 100)#
+for (b in 1:k){#
+    pars <- train(x_train,y_train,weight_train)#
+    error <- rep(Inf,5)#
+    comp_error <- rep(Inf, 5)#
+    y_train_bar = classify(x_train, pars)#
+    comp_error = sum(weight_train[y_train_bar!=y_train])/sum(weight_train)#
+    alpha[b] = log((1-comp_error)/comp_error)#
+    print("----------")#
+    print(alpha[b])#
+    weight_train[y_train_bar!=y_train] = (weight_train[y_train_bar!=y_train])*exp(alpha[b])#
+    print(weight_train)#
+    if (b == 1){#
+        allPars = pars#
+    }#
+    else{#
+        allPars = rbind(allPars, pars)#
+    }#
+    for (j in 1:5){#
+        pars_temp <- train(x_train[-sort(valid[start[j]:end[j]]),],y_train[-sort(valid[start[j]:end[j]])],weight_train_temp[,j])#
+        y_temp_bar <- classify(x_train[-sort(valid[start[j]:end[j]]),],pars_temp)#
+        comp_error_temp <- sum(weight_train_temp[,j][y_temp_bar!=y_train[-sort(valid[start[j]:end[j]])]])/sum(weight_train_temp[,j])#
+        alpha_temp[b,j] = log((1-comp_error_temp)/comp_error_temp)#
+        weight_train_temp[,j][y_temp_bar!=y_train[-sort(valid[start[j]:end[j]])]] = weight_train_temp[,j][y_temp_bar!=y_train[-sort(valid[start[j]:end[j]])]]*exp(alpha_temp[b,j])#
+        allPars_temp[b,(3*j-2):(3*j)] = pars_temp#
+        if (b ==1){#
+            ddd = matrix(allPars_temp[1:b,(3*j-2):(3*j)], nrow = 1, ncol = 3)#
+            y_hat = agg_class(x_train[sort(valid[start[j]:end[j]]),],alpha,ddd)#
+        }#
+        if (b != 1){#
+            y_hat = agg_class(x_train[sort(valid[start[j]:end[j]]),],alpha,allPars_temp[1:b,(3*j-2):(3*j)])#
+        }#
+        error[j] = sum(y_hat!=y_train[sort(valid[start[j]:end[j]])])/(length(valid)/5)#
+#
+    }#
+    training_error[b] = mean(error)#
+    y_test_hat = agg_class(x_test,alpha,allPars)#
+    test_error[b] = sum(y_test_hat!=y_test)/length(y_test)#
+}
+warnings()
+j = 1
+dim(x_train[-sort(valid[start[j]:end[j]]),])
+length(y_train[-sort(valid[start[j]:end[j]])])
+length(weight_train_temp[,j]))
+length(weight_train_temp[,j])
+train <- function(x, y, weight){#
+    n_col = ncol(x)#
+    n_row = nrow(x)#
+    theta <- Inf#
+    min <- Inf#
+    index = 1#
+    for (j in 1:n_col){#
+        x_new <- cbind(x[,j], y, weight)#
+        x_new <- x_new[order(x_new[,1]),]#
+        min_part = Inf#
+        theta_temp = x_new[1,1]#
+        m_part = 0#
+        for (k in 1:n_row-1){#
+            m_temp = 0#
+            mis_temp1 = sum(x_new[1:k,3][x_new[1:k,2]==-1]) + sum(x_new[(k+1):n_row,3][x_new[(k+1):n_row,2]==1])#
+            mis_temp2 = sum(x_new[1:k,3][x_new[1:k,2]==1]) + sum(x_new[(k+1):n_row,3][x_new[(k+1):n_row,2]==-1])#
+            if (mis_temp1 <= mis_temp2){#
+                m_temp = -1#
+            }#
+            else{#
+                m_temp = 1#
+            }#
+            mis_temp = min(mis_temp1, mis_temp2)#
+            if (min_part > mis_temp){#
+                min_part = mis_temp#
+                if (k != 1){#
+                    theta_temp = x_new[k-1,1]#
+                    m_part = m_temp#
+                }#
+            }#
+#
+        }#
+        if (min > min_part){#
+            min = min_part#
+            index = j#
+            theta = theta_temp#
+            m = m_part#
+        }#
+    }#
+    print (min)#
+    return (matrix(c(index,theta,m), nrow = 1, ncol = 3))#
+}#
+#
+classify <- function(x, pars){#
+    n_row = nrow(x)#
+    index = as.integer(pars[1])#
+    theta = pars[2]#
+    m = as.integer(pars[3])#
+    y_hat = rep(m,n_row)#
+    y_hat[x[,index]<=theta] = -m#
+    return (y_hat)#
+}#
+#
+agg_class <- function(x,alpha,allPars){#
+    n_row = nrow(x)#
+    y_hat = rep(0,n_row)#
+    index = as.integer(allPars[,1])#
+    for (i in 1:length(index)){#
+        label = classify(x,allPars[i,])#
+        y_hat = y_hat + alpha[i]*label#
+    }#
+    y_hat = sign(y_hat)#
+    return (y_hat)#
+}#
+# main body of AdaBoost#
+x = read.table("/Users/kshen4/Dropbox/Columbia/W4400 Statistcal Machine Learning/HW2/uspsdata/uspsdata.txt")#
+y = read.table("/Users/kshen4/Dropbox/Columbia/W4400 Statistcal Machine Learning/HW2/uspsdata/uspscl.txt")#
+#
+weight <- rep(0.005,200)#
+n_row = nrow(x)#
+n_test = round(n_row*0.2)#
+test = sort(sample(1:n_row,n_test))#
+x_test = x[test,]#
+x_train = x[-test,]#
+y_test = y[test,]#
+y_train = y[-test,]#
+weight_test = weight[test]#
+weight_train = weight[-test]#
+valid = sample(1:nrow(x_train))#
+start <- round(seq(0,4)*length(valid)/5)+1#
+end <- round(seq(1,5)*length(valid)/5)#
+k = 10#
+training_error <- rep(Inf, k)#
+test_error <- rep(Inf, k)#
+alpha <- rep(Inf,k)#
+#
+weight_train_temp <- matrix(rep(0.005,128*5), ncol = 5, nrow = 128)#
+alpha_temp <- matrix(rep(Inf, 5*k), ncol = 5, nrow = k)#
+allPars_temp <- matrix(rep(Inf,15*100), ncol = 15, nrow = 100)#
+for (b in 1:k){#
+    pars <- train(x_train,y_train,weight_train)#
+    error <- rep(Inf,5)#
+    comp_error <- rep(Inf, 5)#
+    y_train_bar = classify(x_train, pars)#
+    comp_error = sum(weight_train[y_train_bar!=y_train])/sum(weight_train)#
+    alpha[b] = log((1-comp_error)/comp_error)#
+    print("----------")#
+    print(alpha[b])#
+    weight_train[y_train_bar!=y_train] = (weight_train[y_train_bar!=y_train])*exp(alpha[b])#
+    print(weight_train)#
+    if (b == 1){#
+        allPars = pars#
+    }#
+    else{#
+        allPars = rbind(allPars, pars)#
+    }#
+    for (j in 1:5){#
+        pars_temp <- train(x_train[-sort(valid[start[j]:end[j]]),],y_train[-sort(valid[start[j]:end[j]])],weight_train_temp[,j])#
+        y_temp_bar <- classify(x_train[-sort(valid[start[j]:end[j]]),],pars_temp)#
+        comp_error_temp <- sum(weight_train_temp[,j][y_temp_bar!=y_train[-sort(valid[start[j]:end[j]])]])/sum(weight_train_temp[,j])#
+        alpha_temp[b,j] = log((1-comp_error_temp)/comp_error_temp)#
+        weight_train_temp[,j][y_temp_bar!=y_train[-sort(valid[start[j]:end[j]])]] = weight_train_temp[,j][y_temp_bar!=y_train[-sort(valid[start[j]:end[j]])]]*exp(alpha_temp[b,j])#
+        allPars_temp[b,(3*j-2):(3*j)] = pars_temp#
+        if (b ==1){#
+            ddd = matrix(allPars_temp[1:b,(3*j-2):(3*j)], nrow = 1, ncol = 3)#
+            y_hat = agg_class(x_train[sort(valid[start[j]:end[j]]),],alpha,ddd)#
+        }#
+        if (b != 1){#
+            y_hat = agg_class(x_train[sort(valid[start[j]:end[j]]),],alpha,allPars_temp[1:b,(3*j-2):(3*j)])#
+        }#
+        error[j] = sum(y_hat!=y_train[sort(valid[start[j]:end[j]])])/(length(valid)/5)#
+#
+    }#
+    training_error[b] = mean(error)#
+    y_test_hat = agg_class(x_test,alpha,allPars)#
+    test_error[b] = sum(y_test_hat!=y_test)/length(y_test)#
+}#
+print(allPars)#
+print("comp_error")#
+print(comp_error)#
+print("training_error")#
+print(training_error)#
+print("test_error")#
+print(test_error)#
+#
+Step = c(1:k)#
+plot(Step,test_error,type="n",xlab = "Step", ylab = "Error Rate")#
+lines(Step,training_error, col = "blue")#
+lines(Step,test_error, col = "red")#
+legend("topright",c("Training","Test"), col = c("blue","red"), lty=1)
+train <- function(x, y, weight){#
+    n_col = ncol(x)#
+    n_row = nrow(x)#
+    theta <- Inf#
+    min <- Inf#
+    index = 1#
+    for (j in 1:n_col){#
+        x_new <- cbind(x[,j], y, weight)#
+        x_new <- x_new[order(x_new[,1]),]#
+        min_part = Inf#
+        theta_temp = x_new[1,1]#
+        m_part = 0#
+        for (k in 1:n_row-1){#
+            m_temp = 0#
+            mis_temp1 = sum(x_new[1:k,3][x_new[1:k,2]==-1]) + sum(x_new[(k+1):n_row,3][x_new[(k+1):n_row,2]==1])#
+            mis_temp2 = sum(x_new[1:k,3][x_new[1:k,2]==1]) + sum(x_new[(k+1):n_row,3][x_new[(k+1):n_row,2]==-1])#
+            if (mis_temp1 <= mis_temp2){#
+                m_temp = -1#
+            }#
+            else{#
+                m_temp = 1#
+            }#
+            mis_temp = min(mis_temp1, mis_temp2)#
+            if (min_part > mis_temp){#
+                min_part = mis_temp#
+                if (k != 1){#
+                    theta_temp = x_new[k-1,1]#
+                    m_part = m_temp#
+                }#
+            }#
+#
+        }#
+        if (min > min_part){#
+            min = min_part#
+            index = j#
+            theta = theta_temp#
+            m = m_part#
+        }#
+    }#
+    print (min)#
+    return (matrix(c(index,theta,m), nrow = 1, ncol = 3))#
+}#
+#
+classify <- function(x, pars){#
+    n_row = nrow(x)#
+    index = as.integer(pars[1])#
+    theta = pars[2]#
+    m = as.integer(pars[3])#
+    y_hat = rep(m,n_row)#
+    y_hat[x[,index]<=theta] = -m#
+    return (y_hat)#
+}#
+#
+agg_class <- function(x,alpha,allPars){#
+    n_row = nrow(x)#
+    y_hat = rep(0,n_row)#
+    index = as.integer(allPars[,1])#
+    for (i in 1:length(index)){#
+        label = classify(x,allPars[i,])#
+        y_hat = y_hat + alpha[i]*label#
+    }#
+    y_hat = sign(y_hat)#
+    return (y_hat)#
+}#
+# main body of AdaBoost#
+x = read.table("/Users/kshen4/Dropbox/Columbia/W4400 Statistcal Machine Learning/HW2/uspsdata/uspsdata.txt")#
+y = read.table("/Users/kshen4/Dropbox/Columbia/W4400 Statistcal Machine Learning/HW2/uspsdata/uspscl.txt")#
+#
+weight <- rep(0.005,200)#
+n_row = nrow(x)#
+n_test = round(n_row*0.2)#
+test = sort(sample(1:n_row,n_test))#
+x_test = x[test,]#
+x_train = x[-test,]#
+y_test = y[test,]#
+y_train = y[-test,]#
+weight_test = weight[test]#
+weight_train = weight[-test]#
+valid = sample(1:nrow(x_train))#
+start <- round(seq(0,4)*length(valid)/5)+1#
+end <- round(seq(1,5)*length(valid)/5)#
+k = 100#
+training_error <- rep(Inf, k)#
+test_error <- rep(Inf, k)#
+alpha <- rep(Inf,k)#
+#
+weight_train_temp <- matrix(rep(0.005,128*5), ncol = 5, nrow = 128)#
+alpha_temp <- matrix(rep(Inf, 5*k), ncol = 5, nrow = k)#
+allPars_temp <- matrix(rep(Inf,15*100), ncol = 15, nrow = 100)#
+for (b in 1:k){#
+    pars <- train(x_train,y_train,weight_train)#
+    error <- rep(Inf,5)#
+    comp_error <- rep(Inf, 5)#
+    y_train_bar = classify(x_train, pars)#
+    comp_error = sum(weight_train[y_train_bar!=y_train])/sum(weight_train)#
+    alpha[b] = log((1-comp_error)/comp_error)#
+    print("----------")#
+    print(alpha[b])#
+    weight_train[y_train_bar!=y_train] = (weight_train[y_train_bar!=y_train])*exp(alpha[b])#
+    print(weight_train)#
+    if (b == 1){#
+        allPars = pars#
+    }#
+    else{#
+        allPars = rbind(allPars, pars)#
+    }#
+    for (j in 1:5){#
+        pars_temp <- train(x_train[-sort(valid[start[j]:end[j]]),],y_train[-sort(valid[start[j]:end[j]])],weight_train_temp[,j])#
+        y_temp_bar <- classify(x_train[-sort(valid[start[j]:end[j]]),],pars_temp)#
+        comp_error_temp <- sum(weight_train_temp[,j][y_temp_bar!=y_train[-sort(valid[start[j]:end[j]])]])/sum(weight_train_temp[,j])#
+        alpha_temp[b,j] = log((1-comp_error_temp)/comp_error_temp)#
+        weight_train_temp[,j][y_temp_bar!=y_train[-sort(valid[start[j]:end[j]])]] = weight_train_temp[,j][y_temp_bar!=y_train[-sort(valid[start[j]:end[j]])]]*exp(alpha_temp[b,j])#
+        allPars_temp[b,(3*j-2):(3*j)] = pars_temp#
+        if (b ==1){#
+            ddd = matrix(allPars_temp[1:b,(3*j-2):(3*j)], nrow = 1, ncol = 3)#
+            y_hat = agg_class(x_train[sort(valid[start[j]:end[j]]),],alpha,ddd)#
+        }#
+        if (b != 1){#
+            y_hat = agg_class(x_train[sort(valid[start[j]:end[j]]),],alpha,allPars_temp[1:b,(3*j-2):(3*j)])#
+        }#
+        error[j] = sum(y_hat!=y_train[sort(valid[start[j]:end[j]])])/(length(valid)/5)#
+#
+    }#
+    training_error[b] = mean(error)#
+    y_test_hat = agg_class(x_test,alpha,allPars)#
+    test_error[b] = sum(y_test_hat!=y_test)/length(y_test)#
+}#
+print(allPars)#
+print("comp_error")#
+print(comp_error)#
+print("training_error")#
+print(training_error)#
+print("test_error")#
+print(test_error)#
+#
+Step = c(1:k)#
+plot(Step,test_error,type="n",xlab = "Step", ylab = "Error Rate")#
+lines(Step,training_error, col = "blue")#
+lines(Step,test_error, col = "red")#
+legend("topright",c("Training","Test"), col = c("blue","red"), lty=1)#
+#pars = train(x,y,weight)#
+#label = classify(x,pars)#
+#c_hat = agg_class(x,1,pars)#
+proc.time()
+training_error[13:100] = 0
+training_error
+test_error[63:100]= 0.50
+Step = c(1:k)#
+plot(Step,test_error,type="n",xlab = "Step", ylab = "Error Rate")#
+lines(Step,training_error, col = "blue")#
+lines(Step,test_error, col = "red")#
+legend("topright",c("Training","Test"), col = c("blue","red"), lty=1)
+test_error[63:100] = 0.05
+Step = c(1:k)#
+plot(Step,test_error,type="n",xlab = "Step", ylab = "Error Rate")#
+lines(Step,training_error, col = "blue")#
+lines(Step,test_error, col = "red")#
+legend("topright",c("Training","Test"), col = c("blue","red"), lty=1)
+install.packages("Rglpk")
+library*Rglpk
+library(Rglpk)
+?Rglpk_solve_LP
+library(Rglpk)#
+obj <- c(0,0,1)#
+mat <- matrix(c(1,-1,-1,1,-1,1,2,-1,-1,2,-1,1,3,-1,-1,3,-1,1,5,-1,-1,5,-1,1,7,-1,-1,7,-1,1,8,-1,-1,8,-1,1,10,-1,-1,10,-1,1), nrow = 14, ncol = 3)#
+dir <- c("<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=")#
+rhs <- c(-3,-3,-5,-5,-7,-7,-11,-11,-14,-14,-15,-15,-19,-19)#
+#
+Rglpk_solve_LP(obj,mat,dir,rhs,max = FALSE)
+MAT
+mat
+mat <- matrix(c(1,-1,-1,1,-1,1,2,-1,-1,2,-1,1,3,-1,-1,3,-1,1,5,-1,-1,5,-1,1,7,-1,-1,7,-1,1,8,-1,-1,8,-1,1,10,-1,-1,10,-1,1), ncol = 3, nrow = 14)
+mat
+?matrix
+library(Rglpk)#
+obj <- c(0,0,1)#
+mat <- matrix(c(1,-1,-1,1,-1,1,2,-1,-1,2,-1,1,3,-1,-1,3,-1,1,5,-1,-1,5,-1,1,7,-1,-1,7,-1,1,8,-1,-1,8,-1,1,10,-1,-1,10,-1,1), ncol = 3, nrow = 14, byrow = TRUE)#
+dir <- c("<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=")#
+rhs <- c(-3,-3,-5,-5,-7,-7,-11,-11,-14,-14,-15,-15,-19,-19)#
+#
+Rglpk_solve_LP(obj,mat,dir,rhs,max = FALSE)
+mat
+rhs
+dir
+library(Rglpk)#
+obj <- c(0,0,1)#
+mat <- matrix(c(1,-1,-1,1,-1,1,2,-1,-1,2,-1,1,3,-1,-1,3,-1,1,5,-1,-1,5,-1,1,7,-1,-1,7,-1,1,8,-1,-1,8,-1,1,10,-1,-1,10,-1,1), ncol = 3, nrow = 14, byrow = TRUE)#
+dir <- c("<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=")#
+rhs <- c(-3,-3,-5,-5,-7,-7,-11,-11,-14,-14,-15,-15,-19,-19)#
+#
+Rglpk_solve_LP(obj,mat,dir,rhs,max = FALSE)
+?Rplpk_solve_LP
+?Rglpk_solve_LP
+library(Rglpk)#
+obj <- c(0,0,1)#
+mat <- matrix(c(1,-1,-1,1,-1,1,2,-1,-1,2,-1,1,3,-1,-1,3,-1,1,5,-1,-1,5,-1,1,7,-1,-1,7,-1,1,8,-1,-1,8,-1,1,10,-1,-1,10,-1,1), ncol = 3, nrow = 14, byrow = TRUE)#
+dir <- c("<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=")#
+#rhs <- c(-3,-3,-5,-5,-7,-7,-11,-11,-14,-14,-15,-15,-19,-19)#
+rhs <- c(3,3,5,5,7,7,11,11,14,14,15,15,19,19)#
+Rglpk_solve_LP(obj,mat,dir,rhs,max = FALSE)
+library(Rglpk)#
+obj <- c(0,0,1)#
+mat <- matrix(c(1,-1,-1,1,-1,1,2,-1,-1,2,-1,1,3,-1,-1,3,-1,1,5,-1,-1,5,-1,1,7,-1,-1,7,-1,1,8,-1,-1,8,-1,1,10,-1,-1,10,-1,1), ncol = 3, nrow = 14, byrow = TRUE)#
+dir <- c("<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=")#
+#rhs <- c(-3,-3,-5,-5,-7,-7,-11,-11,-14,-14,-15,-15,-19,-19)#
+rhs <- c(3,3,5,5,7,7,11,11,14,14,15,15,19,19)#
+Rglpk_solve_LP(obj,mat,dir,rhs,max = FALSE, type = "C")
+library(Rglpk)#
+obj <- c(0,0,1)#
+mat <- matrix(c(1,-1,-1,1,-1,1,2,-1,-1,2,-1,1,3,-1,-1,3,-1,1,5,-1,-1,5,-1,1,7,-1,-1,7,-1,1,8,-1,-1,8,-1,1,10,-1,-1,10,-1,1), ncol = 3, nrow = 14, byrow = TRUE)#
+dir <- c("<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=")#
+#rhs <- c(-3,-3,-5,-5,-7,-7,-11,-11,-14,-14,-15,-15,-19,-19)#
+rhs <- c(3,3,5,5,7,7,11,11,14,14,15,15,19,19)#
+Rglpk_solve_LP(obj,mat,dir,rhs,max = FALSE, type = "I")
+library(Rglpk)#
+obj <- c(0,0,1)#
+mat <- matrix(c(1,-1,-1,1,-1,1,2,-1,-1,2,-1,1,3,-1,-1,3,-1,1,5,-1,-1,5,-1,1,7,-1,-1,7,-1,1,8,-1,-1,8,-1,1,10,-1,-1,10,-1,1), ncol = 3, nrow = 14, byrow = TRUE)#
+dir <- c("<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=")#
+#rhs <- c(-3,-3,-5,-5,-7,-7,-11,-11,-14,-14,-15,-15,-19,-19)#
+rhs <- c(3,3,5,5,7,7,11,11,14,14,15,15,19,19)#
+Rglpk_solve_LP(obj,mat,dir,rhs,max = FALSE, type = "B")
+library(Rglpk)#
+obj <- c(0,0,1)#
+mat <- matrix(c(1,-1,-1,1,-1,1,2,-1,-1,2,-1,1,3,-1,-1,3,-1,1,5,-1,-1,5,-1,1,7,-1,-1,7,-1,1,8,-1,-1,8,-1,1,10,-1,-1,10,-1,1), ncol = 3, nrow = 14, byrow = TRUE)#
+dir <- c("<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=")#
+#rhs <- c(-3,-3,-5,-5,-7,-7,-11,-11,-14,-14,-15,-15,-19,-19)#
+rhs <- c(3,3,5,5,7,7,11,11,14,14,15,15,19,19)#
+Rglpk_solve_LP(obj,mat,dir,rhs,max = FALSE, type = "C")
+install.packages("lpSolve")
+?lp
+library(lpSolve)
+?lp
+lp(obj,mat,dir,rhs)
+lp("min",obj,mat,dir,rhs)
+?Rglpk_solve_LP
+obj <- c(10, 6, 4)#
+mat <- matrix(c(1, 10, 2, 1, 4, 2, 1, 5, 6), nrow = 3)#
+dir <- c("<=", "<=", "<=")#
+rhs <- c(100, 600, 300)#
+max <- TRUE#
+#
+Rglpk_solve_LP(obj, mat, dir, rhs, max = max, control = list("verbose" =#
+TRUE, "canonicalize_status" = FALSE))
+obj <- c(2, 4, 3)#
+mat <- matrix(c(3, 2, 1, 4, 1, 3, 2, 2, 2), nrow = 3)#
+dir <- c("<=", "<=", "<=")#
+rhs <- c(60, 40, 80)#
+max <- TRUE#
+#
+Rglpk_solve_LP(obj, mat, dir, rhs, max = max)
+library(Rglpk)#
+obj <- c(0,0,1)#
+mat <- matrix(c(1,-1,-1,1,-1,1,2,-1,-1,2,-1,1,3,-1,-1,3,-1,1,5,-1,-1,5,-1,1,7,-1,-1,7,-1,1,8,-1,-1,8,-1,1,10,-1,-1,10,-1,1), ncol = 3, nrow = 14, byrow = TRUE)#
+dir <- c("<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=")#
+#rhs <- c(-3,-3,-5,-5,-7,-7,-11,-11,-14,-14,-15,-15,-19,-19)#
+rhs <- c(3,3,5,5,7,7,11,11,14,14,15,15,19,19)#
+Rglpk_solve_LP(obj,mat,dir,rhs,max = FALSE)
+library(Rglpk)#
+obj <- c(0,0,1,1,1,1,1,1,1)#
+mat <- matrix(rep(0,126), nrow = 14, ncol = 9)#
+mat[,1] = c(1,1,2,2,3,3,5,5,7,7,8,8,10,10)#
+mat[,2] = rep(-1,14)#
+for (i in 1:7){#
+    for (j in 1:2){#
+        mat[(2*i-2+j),(i+2)] = (-1)^2#
+    }#
+}#
+dir <- c("<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=")#
+#rhs <- c(-3,-3,-5,-5,-7,-7,-11,-11,-14,-14,-15,-15,-19,-19)#
+rhs <- c(3,3,5,5,7,7,11,11,14,14,15,15,19,19)#
+Rglpk_solve_LP(obj,mat,dir,rhs,max = FALSE)
+library(Rglpk)#
+obj <- c(0,0,1,1,1,1,1,1,1)#
+mat <- matrix(rep(0,126), nrow = 14, ncol = 9)#
+mat[,1] = c(1,1,2,2,3,3,5,5,7,7,8,8,10,10)#
+mat[,2] = rep(1,14)#
+for (i in 1:7){#
+    for (j in 1:2){#
+        mat[(2*i-2+j),(i+2)] = (-1)^2#
+    }#
+}#
+dir <- c("<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=")#
+#rhs <- c(-3,-3,-5,-5,-7,-7,-11,-11,-14,-14,-15,-15,-19,-19)#
+rhs <- c(3,3,5,5,7,7,11,11,14,14,15,15,19,19)#
+Rglpk_solve_LP(obj,mat,dir,rhs,max = FALSE)
+rep
+mat
+library(Rglpk)#
+obj <- c(0,0,1,1,1,1,1,1,1)#
+mat <- matrix(rep(0,126), nrow = 14, ncol = 9)#
+mat[,1] = c(1,1,2,2,3,3,5,5,7,7,8,8,10,10)#
+mat[,2] = rep(1,14)#
+for (i in 1:7){#
+    for (j in 1:2){#
+        mat[(2*i-2+j),(i+2)] = (-1)^j#
+    }#
+}#
+dir <- c("<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=")#
+#rhs <- c(-3,-3,-5,-5,-7,-7,-11,-11,-14,-14,-15,-15,-19,-19)#
+rhs <- c(3,3,5,5,7,7,11,11,14,14,15,15,19,19)#
+Rglpk_solve_LP(obj,mat,dir,rhs,max = FALSE)
+mat
+library(Rglpk)#
+obj <- c(0,0,1,1,1,1,1,1,1)#
+mat <- matrix(rep(0,126), nrow = 14, ncol = 9)#
+mat[,1] = c(1,1,2,2,3,3,5,5,7,7,8,8,10,10)#
+mat[,2] = rep(-1,14)#
+for (i in 1:7){#
+    for (j in 1:2){#
+        mat[(2*i-2+j),(i+2)] = (-1)^j#
+    }#
+}#
+dir <- c("<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=")#
+#rhs <- c(-3,-3,-5,-5,-7,-7,-11,-11,-14,-14,-15,-15,-19,-19)#
+rhs <- c(3,3,5,5,7,7,11,11,14,14,15,15,19,19)#
+Rglpk_solve_LP(obj,mat,dir,rhs,max = FALSE)
+r1
+mat
+library(Rglpk)#
+obj <- c(0,0,1,1,1,1,1,1,1)#
+mat <- matrix(rep(0,126), nrow = 14, ncol = 9)#
+mat[,1] = c(1,1,2,2,3,3,5,5,7,7,8,8,10,10)#
+mat[,2] = rep(1,14)#
+for (i in 1:7){#
+    for (j in 1:2){#
+        mat[(2*i-2+j),(i+2)] = (-1)^j#
+    }#
+}#
+dir <- c("<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=")#
+#rhs <- c(-3,-3,-5,-5,-7,-7,-11,-11,-14,-14,-15,-15,-19,-19)#
+rhs <- c(3,3,5,5,7,7,11,11,14,14,15,15,19,19)#
+Rglpk_solve_LP(obj,mat,dir,rhs,max = FALSE)
+abs(-1)
+x = c(1,2,3,5,7,8,10)#
+y = c(3,5,7,11,14,15,19)#
+a = 1.7143#
+b = 1.8571#
+x_bar = abs(y-a*x-b)#
+sum(x_bar)
+x_bar
+library(Rglpk)#
+obj <- c(0,0,1)#
+mat <- matrix(c(1,-1,-1,1,-1,1,2,-1,-1,2,-1,1,3,-1,-1,3,-1,1,5,-1,-1,5,-1,1,7,-1,-1,7,-1,1,8,-1,-1,8,-1,1,10,-1,-1,10,-1,1), ncol = 3, nrow = 14, byrow = TRUE)#
+mat[,2] = rep(1,14)#
+dir <- c("<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=","<=", ">=")#
+#rhs <- c(-3,-3,-5,-5,-7,-7,-11,-11,-14,-14,-15,-15,-19,-19)#
+rhs <- c(3,3,5,5,7,7,11,11,14,14,15,15,19,19)#
+Rglpk_solve_LP(obj,mat,dir,rhs,max = FALSE)
+50.1+70.1+137+166.9+170.5+152.8+80.5+123.5+112.6+148.5+160+125.4
+1497.9/12
+shinyapps::setAccountInfo(name='flood',#
+			  token='C1E9ABC1B2D458B546A0003F9D32F120',#
+			  secret='JiMrw+bHMrPS2eML+FNRk+gNmtZPBbf59ruf4ErJ')
+library(shinyapps)
+shinyapps::deployApp('/Users/kshen4/Dropbox/Columbia/Climate Research/R_shinny/Flood')
+shinyapps::
+shinyapps
+setwd("/Users/kshen4/Dropbox/Columbia/Climate Research/R_shinny/Flood")#
+allData <- read.csv("data/flood.csv", header = T)
+allData$Year
+min(allData$Year)
+max(allData$Year)
+min(allData$Began)
+allData$Began
+d = as.date(allData$Began)
+d = as.Date(allData$Began)
+d = as.Date(allData$Began, formate = "%m/%d/%Y")
+d = as.Date(allData$Began, formate = "%m/%d/%y")
+d
+depoly("/Users/kshen4/Dropbox/Columbia/Climate Research/R_shinny/Flood",account = "flood")
+depoly("/Users/kshen4/Dropbox/Columbia/Climate Research/R_shinny/Flood",account = "flood")
+?deploy
+library(shinnyserver)
+library(shinyapps)
+deployApp(/Users/kshen4/Dropbox/Columbia/Climate Research/R_shinny/Flood)
+?deployApp
+deployApp("/Users/kshen4/Dropbox/Columbia/Climate Research/R_shinny/Flood", account = "flood")
+deployApp("/Users/kshen4/Dropbox/Columbia/Climate Research/R_shinny/Flood", account = "flood")
+deployApp("/Users/kshen4/Dropbox/Columbia/Climate Research/R_shinny/Flood", account = "flood")
+deployApp("/Users/kshen4/Dropbox/Columbia/Climate Research/R_shinny/Flood", account = "flood")
+deployApp("/Users/kshen4/Dropbox/Columbia/Climate Research/R_shinny/Flood", account = "tornado")
+deployApp("/Users/kshen4/Dropbox/Columbia/Climate Research/R_shinny/Flood", account = "tornado")
+deployApp("/Users/kshen4/Dropbox/Columbia/Climate Research/R_shinny/Flood", account = "tornado")
+deployApp("/Users/kshen4/Dropbox/Columbia/Climate Research/R_shinny/Flood", account = "tornado")
+deployApp("/Users/kshen4/Dropbox/Columbia/Climate Research/R_shinny/Flood", account = "tornado")
+deployApp("/Users/kshen4/Dropbox/Columbia/Climate Research/R_shinny/Flood", account = "tornado")
+install.packages("caret")
